@@ -208,6 +208,70 @@ STRINGS = {
     "dl_psd":           {"en": "Download PSD CSV", "it": "Scarica PSD CSV", "fr": "Télécharger PSD CSV", "es": "Descargar PSD CSV", "de": "PSD CSV herunterladen"},
     "dl_stalta":        {"en": "Download STA/LTA CSV", "it": "Scarica STA/LTA CSV", "fr": "Télécharger STA/LTA CSV", "es": "Descargar STA/LTA CSV", "de": "STA/LTA CSV herunterladen"},
     "preview_title":    {"en": "Signal preview (first 200 samples)", "it": "Anteprima segnale (primi 200 campioni)", "fr": "Aperçu signal (200 premiers échantillons)", "es": "Vista previa señal (primeras 200 muestras)", "de": "Signalvorschau (erste 200 Samples)"},
+    # ── Section descriptions ─────────────────────────────────────────────────
+    "wave_desc": {
+        "en": "The waveform plot shows amplitude (ground motion in counts) vs time. P-waves arrive first (compressional), S-waves second (shear). The Butterworth bandpass filter removes noise outside your chosen frequency band without distorting arrival times.",
+        "it": "Il grafico mostra l'ampiezza (moto del suolo in counts) nel tempo. Le onde P arrivano per prime (compressive), le onde S per seconde (di taglio). Il filtro Butterworth bandpass elimina il rumore fuori dalla banda di frequenza scelta senza distorcere i tempi di arrivo.",
+        "fr": "Le graphique montre l'amplitude (mouvement du sol en counts) en fonction du temps. Les ondes P arrivent en premier (compression), les ondes S en second (cisaillement). Le filtre Butterworth passe-bande supprime le bruit hors de la bande de fréquence sans distordre les temps d'arrivée.",
+        "es": "El gráfico muestra la amplitud (movimiento del suelo en counts) vs tiempo. Las ondas P llegan primero (compresión), las ondas S después (cizallamiento). El filtro Butterworth pasa-banda elimina el ruido fuera de la banda de frecuencia sin distorsionar los tiempos de llegada.",
+        "de": "Das Wellenformdiagramm zeigt die Amplitude (Bodenbewegung in Counts) über die Zeit. P-Wellen kommen zuerst an (Kompression), S-Wellen danach (Scherung). Der Butterworth-Bandpassfilter entfernt Rauschen außerhalb des Frequenzbandes ohne Ankunftszeiten zu verzerren.",
+    },
+    "fft_desc": {
+        "en": "The FFT decomposes the signal into its frequency components. Each frequency bin shows how much energy is present at that frequency. The dominant frequency is the peak; the spectral centroid is the energy-weighted mean; bandwidth measures spread.",
+        "it": "La FFT scompone il segnale nelle sue componenti in frequenza. Ogni bin di frequenza indica quanta energia è presente a quella frequenza. La frequenza dominante è il picco; il centroide spettrale è la media pesata per l'energia; la larghezza di banda misura la dispersione.",
+        "fr": "La FFT décompose le signal en ses composantes fréquentielles. Chaque bin de fréquence indique l'énergie présente à cette fréquence. La fréquence dominante est le pic ; le centroïde spectral est la moyenne pondérée par l'énergie ; la largeur de bande mesure la dispersion.",
+        "es": "La FFT descompone la señal en sus componentes de frecuencia. Cada bin muestra cuánta energía hay en esa frecuencia. La frecuencia dominante es el pico; el centroide espectral es la media ponderada por energía; el ancho de banda mide la dispersión.",
+        "de": "Die FFT zerlegt das Signal in seine Frequenzkomponenten. Jeder Frequenz-Bin zeigt, wie viel Energie bei dieser Frequenz vorhanden ist. Die dominante Frequenz ist der Peak; der Spektralzentroid ist der energiegewichtete Mittelwert; die Bandbreite misst die Streuung.",
+    },
+    "spec_desc": {
+        "en": "The spectrogram shows how the frequency content changes over time. It is computed via Short-Time Fourier Transform (STFT): the signal is split into short, overlapping windows, the FFT is computed for each, and the results are assembled into a 2D heatmap. Brighter colours = more energy.",
+        "it": "Lo spettrogramma mostra come il contenuto in frequenza cambia nel tempo. È calcolato tramite STFT: il segnale è diviso in finestre brevi e sovrapposte, la FFT è calcolata per ciascuna, e i risultati formano una mappa di calore 2D. Colori più chiari = più energia.",
+        "fr": "Le spectrogramme montre l'évolution du contenu fréquentiel dans le temps. Calculé via STFT : le signal est découpé en fenêtres courtes chevauchantes, la FFT est calculée pour chacune, et les résultats forment une carte de chaleur 2D. Couleurs plus claires = plus d'énergie.",
+        "es": "El espectrograma muestra cómo varía el contenido frecuencial en el tiempo. Se calcula mediante STFT: el signal se divide en ventanas cortas solapadas, se calcula la FFT de cada una, y los resultados forman un mapa de calor 2D. Colores más claros = más energía.",
+        "de": "Das Spektrogramm zeigt, wie sich der Frequenzinhalt über die Zeit verändert. Es wird per STFT berechnet: Das Signal wird in kurze, überlappende Fenster unterteilt, für jedes wird die FFT berechnet, und die Ergebnisse bilden eine 2D-Heatmap. Hellere Farben = mehr Energie.",
+    },
+    "stalta_desc": {
+        "en": "STA/LTA (Short-Term Average / Long-Term Average) is the classic automatic seismic phase detector (Allen, 1978). It compares the short-term signal energy to the long-term background energy. When the ratio spikes above the threshold, a seismic phase (usually P-wave) is detected.",
+        "it": "STA/LTA è il classico detector automatico di fasi sismiche (Allen, 1978). Confronta l'energia del segnale a breve termine con quella di fondo a lungo termine. Quando il rapporto supera la soglia, viene rilevata una fase sismica (di solito l'onda P).",
+        "fr": "STA/LTA est le détecteur automatique classique de phases sismiques (Allen, 1978). Il compare l'énergie du signal à court terme à l'énergie de fond à long terme. Quand le rapport dépasse le seuil, une phase sismique (généralement l'onde P) est détectée.",
+        "es": "STA/LTA es el detector automático clásico de fases sísmicas (Allen, 1978). Compara la energía de corto plazo del señal con la energía de fondo a largo plazo. Cuando el cociente supera el umbral, se detecta una fase sísmica (normalmente la onda P).",
+        "de": "STA/LTA ist der klassische automatische seismische Phasendetektor (Allen, 1978). Er vergleicht die kurzfristige Signalenergie mit der langfristigen Hintergrundenergie. Wenn das Verhältnis den Schwellenwert überschreitet, wird eine seismische Phase (meist P-Welle) erkannt.",
+    },
+    "model_desc": {
+        "en": "This table shows an IASP91-inspired layered crustal velocity model used for synthetic waveform generation. Each layer is defined by its P-wave velocity (Vp), S-wave velocity (Vs), and density (ρ). These properties depend on mineralogy and pressure.",
+        "it": "Questa tabella mostra un modello di velocità crostale a strati ispirato a IASP91, usato per generare i segnali sintetici. Ogni strato è definito dalla velocità dell'onda P (Vp), onda S (Vs) e densità (ρ). Queste proprietà dipendono dalla mineralogia e dalla pressione.",
+        "fr": "Ce tableau montre un modèle de vitesse crustale en couches inspiré d'IASP91, utilisé pour générer les formes d'onde synthétiques. Chaque couche est définie par la vitesse des ondes P (Vp), S (Vs) et la densité (ρ). Ces propriétés dépendent de la minéralogie et de la pression.",
+        "es": "Esta tabla muestra un modelo de velocidad cortical en capas inspirado en IASP91, usado para generar las formas de onda sintéticas. Cada capa se define por la velocidad de onda P (Vp), onda S (Vs) y densidad (ρ). Estas propiedades dependen de la mineralogía y la presión.",
+        "de": "Diese Tabelle zeigt ein IASP91-inspiriertes geschichtetes Krustengeschwindigkeitsmodell für die Synthese von Wellenformen. Jede Schicht ist durch P-Wellengeschwindigkeit (Vp), S-Wellengeschwindigkeit (Vs) und Dichte (ρ) definiert. Diese Eigenschaften hängen von der Mineralogie und dem Druck ab.",
+    },
+    "filter_why_title": {
+        "en": "Why filter seismic signals?",
+        "it": "Perché filtrare i segnali sismici?",
+        "fr": "Pourquoi filtrer les signaux sismiques ?",
+        "es": "¿Por qué filtrar las señales sísmicas?",
+        "de": "Warum seismische Signale filtern?",
+    },
+    "filter_why_body": {
+        "en": "Real seismograms contain instrument noise, microseismic noise (ocean waves, 0.1–0.3 Hz), cultural noise (traffic, 1–20 Hz), and electronic noise. A bandpass filter keeps only the frequency band relevant to the earthquake you are studying, improving SNR and making phase picks more accurate.",
+        "it": "I sismogrammi reali contengono rumore strumentale, rumore microsiemico (onde oceaniche, 0.1–0.3 Hz), rumore culturale (traffico, 1–20 Hz) e rumore elettronico. Un filtro bandpass mantiene solo la banda di frequenza rilevante per il terremoto studiato, migliorando il SNR e rendendo più precisi i pick delle fasi.",
+        "fr": "Les sismogrammes réels contiennent du bruit instrumental, du bruit microsismique (vagues océaniques, 0.1–0.3 Hz), du bruit culturel (trafic, 1–20 Hz) et du bruit électronique. Un filtre passe-bande conserve uniquement la bande de fréquence pertinente pour le séisme étudié, améliorant le SNR et la précision des détections de phases.",
+        "es": "Los sismogramas reales contienen ruido instrumental, ruido microsísmico (olas oceánicas, 0.1–0.3 Hz), ruido cultural (tráfico, 1–20 Hz) y ruido electrónico. Un filtro pasa-banda conserva solo la banda de frecuencia relevante para el sismo estudiado, mejorando el SNR y la precisión de los picks de fases.",
+        "de": "Echte Seismogramme enthalten Instrumentenrauschen, mikroseismisches Rauschen (Meereswellen, 0,1–0,3 Hz), kulturelles Rauschen (Verkehr, 1–20 Hz) und elektronisches Rauschen. Ein Bandpassfilter behält nur den für das untersuchte Erdbeben relevanten Frequenzbereich, verbessert das SNR und macht Phasenbestimmungen genauer.",
+    },
+    "export_desc": {
+        "en": "Download the processed data as CSV files for further analysis in Python, MATLAB, Excel, or any other tool. Each file contains the full time series or spectrum with all computed quantities.",
+        "it": "Scarica i dati elaborati come file CSV per ulteriori analisi in Python, MATLAB, Excel o qualsiasi altro strumento. Ogni file contiene la serie temporale o lo spettro completo con tutte le grandezze calcolate.",
+        "fr": "Téléchargez les données traitées en fichiers CSV pour une analyse ultérieure dans Python, MATLAB, Excel ou tout autre outil. Chaque fichier contient la série temporelle ou le spectre complet avec toutes les grandeurs calculées.",
+        "es": "Descarga los datos procesados como archivos CSV para análisis adicional en Python, MATLAB, Excel u otra herramienta. Cada archivo contiene la serie temporal o el espectro completo con todas las magnitudes calculadas.",
+        "de": "Lade die verarbeiteten Daten als CSV-Dateien für weitere Analysen in Python, MATLAB, Excel oder anderen Tools herunter. Jede Datei enthält die vollständige Zeitreihe oder das Spektrum mit allen berechneten Größen.",
+    },
+    "syn_desc": {
+        "en": "Generate a physically realistic synthetic seismogram using an IASP91-like crustal model. The simulator models P-waves (6–12 Hz), S-waves (2–6 Hz) and surface waves (0.3–1 Hz) with amplitudes scaled by magnitude and distances computed from travel-time equations.",
+        "it": "Genera un sismogramma sintetico fisicamente realistico usando un modello crostale simile a IASP91. Il simulatore modella le onde P (6–12 Hz), le onde S (2–6 Hz) e le onde superficiali (0.3–1 Hz) con ampiezze scalate per la magnitudo e distanze calcolate dalle equazioni dei tempi di percorrenza.",
+        "fr": "Génère un sismogramme synthétique physiquement réaliste en utilisant un modèle crustal de type IASP91. Le simulateur modélise les ondes P (6–12 Hz), S (2–6 Hz) et de surface (0.3–1 Hz) avec des amplitudes mises à l'échelle par la magnitude et des distances calculées à partir des équations de temps de trajet.",
+        "es": "Genera un sismograma sintético físicamente realista usando un modelo cortical tipo IASP91. El simulador modela ondas P (6–12 Hz), ondas S (2–6 Hz) y ondas superficiales (0.3–1 Hz) con amplitudes escaladas por la magnitud y distancias calculadas a partir de ecuaciones de tiempo de viaje.",
+        "de": "Erzeugt ein physikalisch realistisches synthetisches Seismogramm unter Verwendung eines IASP91-ähnlichen Krustenmodells. Der Simulator modelliert P-Wellen (6–12 Hz), S-Wellen (2–6 Hz) und Oberflächenwellen (0,3–1 Hz) mit durch die Magnitude skalierten Amplituden und aus Laufzeitgleichungen berechneten Distanzen.",
+    },
 }
 
 
@@ -469,6 +533,127 @@ label { color: rgba(255,255,255,0.55) !important; font-size: 12px !important; }
 }
 .stTabs [data-baseweb="tab"] { border-radius: 9px; font-size: 13px; color: rgba(255,255,255,0.5) !important; padding: 6px 18px; }
 .stTabs [aria-selected="true"] { background: rgba(88,166,255,0.15) !important; color: #58a6ff !important; }
+
+/* ── Tab intro banner ── */
+.tab-intro {
+    background: linear-gradient(90deg, rgba(88,166,255,0.08) 0%, rgba(63,185,80,0.04) 100%);
+    border: 1px solid rgba(88,166,255,0.12);
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.62);
+    line-height: 1.7;
+}
+.tab-intro strong { color: #e8edf5; }
+
+/* ── Pill badges ── */
+.pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 16px 0; }
+.pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px; padding: 3px 12px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: rgba(255,255,255,0.55);
+}
+.pill.blue  { background: rgba(88,166,255,0.1);  border-color: rgba(88,166,255,0.25);  color: #58a6ff; }
+.pill.green { background: rgba(63,185,80,0.1);   border-color: rgba(63,185,80,0.25);   color: #3fb950; }
+.pill.amber { background: rgba(210,153,34,0.1);  border-color: rgba(210,153,34,0.25);  color: #d29922; }
+.pill.violet{ background: rgba(188,140,255,0.1); border-color: rgba(188,140,255,0.25); color: #bc8cff; }
+.pill.coral { background: rgba(247,129,102,0.1); border-color: rgba(247,129,102,0.25); color: #f78166; }
+
+/* ── Concept cards (two-column grid) ── */
+.concept-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+@media (max-width: 768px) { .concept-grid { grid-template-columns: 1fr; } }
+.concept-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px; padding: 14px 16px;
+}
+.concept-card .cc-icon { font-size: 20px; margin-bottom: 6px; }
+.concept-card .cc-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.concept-card .cc-body  { font-size: 12.5px; color: rgba(255,255,255,0.58); line-height: 1.6; }
+
+/* ── Inline formula (smaller, inside prose) ── */
+.f-inline {
+    font-family: 'JetBrains Mono', monospace;
+    background: rgba(0,0,0,0.3);
+    border-radius: 4px; padding: 1px 5px;
+    font-size: 12px; color: #3fb950;
+}
+
+/* ── Gradient divider ── */
+.grad-div {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(88,166,255,0.3), transparent);
+    margin: 22px 0;
+}
+
+/* ── Sidebar tip ── */
+.sb-tip {
+    background: rgba(63,185,80,0.07);
+    border-left: 2px solid #3fb950;
+    border-radius: 0 8px 8px 0;
+    padding: 7px 10px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    margin: 8px 0 4px 0;
+    line-height: 1.5;
+}
+
+/* ── Stat highlight row ── */
+.stat-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0; }
+.stat-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 10px; padding: 8px 14px;
+    text-align: center; min-width: 80px;
+}
+.stat-item .si-val { font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 600; color: #58a6ff; }
+.stat-item .si-lbl { font-size: 10px; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
+
+/* ── Hero enhanced ── */
+.hero-tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.hero-tag {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px; padding: 3px 9px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: rgba(255,255,255,0.4);
+}
+.hero-tag.ht-blue   { background: rgba(88,166,255,0.1);  border-color: rgba(88,166,255,0.25);  color: #58a6ff; }
+.hero-tag.ht-green  { background: rgba(63,185,80,0.1);   border-color: rgba(63,185,80,0.25);   color: #3fb950; }
+.hero-tag.ht-violet { background: rgba(188,140,255,0.1); border-color: rgba(188,140,255,0.25); color: #bc8cff; }
+.hero-tag.ht-amber  { background: rgba(210,153,34,0.1);  border-color: rgba(210,153,34,0.25);  color: #d29922; }
+
+/* ── Step card ── */
+.step-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px; padding: 12px 16px;
+    margin-bottom: 8px; display: flex; gap: 12px; align-items: flex-start;
+    transition: border-color .2s;
+}
+.step-card:hover { border-color: rgba(88,166,255,0.25); }
+.step-icon {
+    width: 28px; height: 28px; border-radius: 8px;
+    background: rgba(88,166,255,0.15); color: #58a6ff;
+    font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.step-body { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.55; }
+.step-body strong { color: rgba(255,255,255,0.88); }
+
+/* ── Key concept callout ── */
+.key-concept {
+    background: linear-gradient(135deg, rgba(188,140,255,0.08), rgba(88,166,255,0.06));
+    border: 1px solid rgba(188,140,255,0.18);
+    border-radius: 12px; padding: 14px 18px; margin: 12px 0;
+}
+.key-concept .kc-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #bc8cff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.key-concept .kc-body  { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.65; }
+
+/* ── Scrollable math box ── */
+.math-scroll { overflow-x: auto; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -629,6 +814,7 @@ with st.sidebar:
 
     # ── Synthetic ────────────────────────────────────────────────────────────
     st.markdown(f"<div class='sb-section'>{T('syn_section', lang)}</div>", unsafe_allow_html=True)
+    st.markdown(f"<div class='sb-tip'>{T('syn_desc', lang)}</div>", unsafe_allow_html=True)
     syn_magnitude = st.slider(T("magnitude", lang), 2.0, 8.0, 5.5, 0.5)
     syn_depth     = st.slider(T("depth", lang), 5, 200, 30, 5)
     syn_dist      = st.slider(T("distance", lang), 10, 500, 80, 10)
@@ -641,12 +827,28 @@ with st.sidebar:
     f_low        = st.slider(T("f_low", lang), 0.1, 10.0, 1.0, 0.1)
     f_high       = st.slider(T("f_high", lang), 1.0, 50.0, 10.0, 0.5)
     filter_order = st.selectbox(T("filter_order", lang), [2, 4, 6, 8], index=1)
+    _filter_tip = {
+        "en": "💡 Typical seismology bands: teleseismic 0.01–2 Hz · regional 0.5–5 Hz · local 1–15 Hz",
+        "it": "💡 Bande tipiche: teleseismi 0.01–2 Hz · regionali 0.5–5 Hz · locali 1–15 Hz",
+        "fr": "💡 Bandes typiques : téléséismique 0.01–2 Hz · régional 0.5–5 Hz · local 1–15 Hz",
+        "es": "💡 Bandas típicas: telesísmico 0.01–2 Hz · regional 0.5–5 Hz · local 1–15 Hz",
+        "de": "💡 Typische Bänder: teleseismisch 0.01–2 Hz · regional 0.5–5 Hz · lokal 1–15 Hz",
+    }
+    st.markdown(f"<div class='sb-tip'>{_filter_tip[lang]}</div>", unsafe_allow_html=True)
 
     # ── STA/LTA ──────────────────────────────────────────────────────────────
     st.markdown(f"<div class='sb-section'>{T('stalta_section', lang)}</div>", unsafe_allow_html=True)
     sta_len   = st.slider(T("sta_window", lang), 0.2, 5.0, 0.5, 0.1)
     lta_len   = st.slider(T("lta_window", lang), 5.0, 60.0, 20.0, 1.0)
     threshold = st.slider(T("threshold", lang), 1.0, 15.0, 3.5, 0.5)
+    _stalta_tip = {
+        "en": "💡 Rule of thumb: LTA ≥ 10× STA. Lower threshold → more triggers. Typical threshold: 3–5.",
+        "it": "💡 Regola: LTA ≥ 10× STA. Soglia bassa → più trigger. Soglia tipica: 3–5.",
+        "fr": "💡 Règle : LTA ≥ 10× STA. Seuil bas → plus de déclenchements. Seuil typique : 3–5.",
+        "es": "💡 Regla: LTA ≥ 10× STA. Umbral bajo → más disparos. Umbral típico: 3–5.",
+        "de": "💡 Faustregel: LTA ≥ 10× STA. Niedriger Schwellenwert → mehr Trigger. Typisch: 3–5.",
+    }
+    st.markdown(f"<div class='sb-tip'>{_stalta_tip[lang]}</div>", unsafe_allow_html=True)
 
     # ── Display ──────────────────────────────────────────────────────────────
     st.markdown(f"<div class='sb-section'>{T('display_section', lang)}</div>", unsafe_allow_html=True)
@@ -689,73 +891,81 @@ elif data_source == 2 and uploaded_file:
 # ─────────────────────────────────────────────────────────────────────────────
 st.markdown(f"""
 <div class='hero'>
-  <h1>SeismicLens</h1>
+  <h1>🌍 SeismicLens</h1>
   <div class='hero-sub'>{T("hero_sub", lang)}</div>
-  <div class='hero-badge'>Geophysics · FFT · STA/LTA · Butterworth · MiniSEED · IRIS / INGV</div>
+  <div class='hero-tag-row'>
+    <span class='hero-tag ht-blue'>🔬 FFT &amp; Spectral Analysis</span>
+    <span class='hero-tag ht-green'>🌊 STA/LTA P-wave Picker</span>
+    <span class='hero-tag ht-violet'>🎛️ Butterworth Filter</span>
+    <span class='hero-tag ht-amber'>📡 MiniSEED · IRIS · INGV</span>
+    <span class='hero-tag'>🗺️ IASP91 Velocity Model</span>
+    <span class='hero-tag'>📊 CSV Export</span>
+    <span class='hero-tag'>🌐 5 Languages</span>
+  </div>
 </div>
 """, unsafe_allow_html=True)
 
 # ── Quick-start guide ─────────────────────────────────────────────────────────
 _GUIDE = {
     "en": {
-        "title": "How to use SeismicLens",
+        "title": "🚀 How to use SeismicLens",
         "steps": [
-            ("1", "<b>Choose a data source</b> in the sidebar: generate a synthetic earthquake, upload a MiniSEED file from IRIS/INGV, or upload a CSV."),
-            ("2", "<b>Configure the Butterworth bandpass filter</b> (low cut, high cut, order). Toggle it on or off to compare filtered vs raw signal."),
-            ("3", "<b>Adjust the STA/LTA detector</b> parameters (STA window, LTA window, threshold) to locate the automatic P-wave pick."),
-            ("4", "<b>Explore the tabs</b>: Waveform, Spectral Analysis (FFT + PSD), Spectrogram, STA/LTA, Velocity Model, Theory & Math."),
-            ("5", "<b>Export</b> the processed signal, FFT spectrum, PSD and STA/LTA ratio as CSV files."),
+            ("1", "📂", "<strong>Choose a data source</strong> in the sidebar: generate a <em>synthetic earthquake</em> (instant, no file needed), upload a real <em>MiniSEED</em> file from IRIS/INGV, or upload a <em>CSV</em> waveform."),
+            ("2", "🎛️", "<strong>Configure the Butterworth bandpass filter</strong>: set the low-cut and high-cut frequencies (Hz) and the filter order. Toggle it on/off to compare the filtered signal against the raw noisy waveform."),
+            ("3", "🔍", "<strong>Adjust the STA/LTA P-wave detector</strong>: the STA window (short, 0.2–2 s) captures the onset energy; the LTA window (long, 5–60 s) tracks the background. Raise the threshold to suppress false triggers."),
+            ("4", "📊", "<strong>Explore the analysis tabs</strong>: <em>Waveform</em> (time domain), <em>Spectral Analysis</em> (FFT + PSD), <em>Spectrogram</em> (time–frequency), <em>STA/LTA</em> (phase detector), <em>Velocity Model</em> (IASP91), <em>Theory &amp; Math</em>."),
+            ("5", "💾", "<strong>Export your results</strong> as CSV files — processed signal, FFT spectrum (amplitude + phase), Welch PSD, and STA/LTA ratio — ready for Python, MATLAB, or Excel."),
         ],
     },
     "it": {
-        "title": "Come usare SeismicLens",
+        "title": "🚀 Come usare SeismicLens",
         "steps": [
-            ("1", "<b>Scegli la sorgente dati</b> nella barra laterale: genera un terremoto sintetico, carica un file MiniSEED da IRIS/INGV, o carica un CSV."),
-            ("2", "<b>Configura il filtro Butterworth bandpass</b> (taglio basso, taglio alto, ordine). Attivalo o disattivalo per confrontare segnale filtrato e grezzo."),
-            ("3", "<b>Regola il detector STA/LTA</b> (finestra STA, finestra LTA, soglia) per individuare automaticamente l'onda P."),
-            ("4", "<b>Esplora le schede</b>: Forma d'onda, Analisi spettrale (FFT + PSD), Spettrogramma, STA/LTA, Modello di velocità, Teoria e matematica."),
-            ("5", "<b>Esporta</b> il segnale elaborato, lo spettro FFT, la PSD e il rapporto STA/LTA come file CSV."),
+            ("1", "📂", "<strong>Scegli la sorgente dati</strong> nella barra laterale: genera un <em>terremoto sintetico</em> (istantaneo, senza file), carica un file <em>MiniSEED</em> reale da IRIS/INGV, o carica una forma d'onda <em>CSV</em>."),
+            ("2", "🎛️", "<strong>Configura il filtro Butterworth bandpass</strong>: imposta le frequenze di taglio basso e alto (Hz) e l'ordine del filtro. Attivalo/disattivalo per confrontare il segnale filtrato con quello grezzo."),
+            ("3", "🔍", "<strong>Regola il detector STA/LTA</strong>: la finestra STA (breve, 0.2–2 s) cattura l'energia dell'onset; la finestra LTA (lunga, 5–60 s) traccia il background. Alza la soglia per sopprimere i falsi trigger."),
+            ("4", "📊", "<strong>Esplora le schede di analisi</strong>: <em>Forma d'onda</em>, <em>Analisi spettrale</em> (FFT + PSD), <em>Spettrogramma</em>, <em>STA/LTA</em>, <em>Modello di velocità</em>, <em>Teoria e matematica</em>."),
+            ("5", "💾", "<strong>Esporta i risultati</strong> come file CSV — segnale elaborato, spettro FFT, PSD Welch, rapporto STA/LTA — pronti per Python, MATLAB o Excel."),
         ],
     },
     "fr": {
-        "title": "Comment utiliser SeismicLens",
+        "title": "🚀 Comment utiliser SeismicLens",
         "steps": [
-            ("1", "<b>Choisissez une source de données</b> dans la barre latérale : générez un séisme synthétique, importez un fichier MiniSEED depuis IRIS/INGV, ou importez un CSV."),
-            ("2", "<b>Configurez le filtre Butterworth passe-bande</b> (coupure basse, coupure haute, ordre). Activez-le ou désactivez-le pour comparer signal filtré et brut."),
-            ("3", "<b>Ajustez le détecteur STA/LTA</b> (fenêtre STA, fenêtre LTA, seuil) pour localiser automatiquement l'onde P."),
-            ("4", "<b>Explorez les onglets</b> : Forme d'onde, Analyse spectrale (FFT + PSD), Spectrogramme, STA/LTA, Modèle de vitesse, Théorie et maths."),
-            ("5", "<b>Exportez</b> le signal traité, le spectre FFT, la PSD et le rapport STA/LTA en fichiers CSV."),
+            ("1", "📂", "<strong>Choisissez une source de données</strong> dans la barre latérale : générez un <em>séisme synthétique</em> (instantané, sans fichier), importez un fichier <em>MiniSEED</em> réel depuis IRIS/INGV, ou importez une forme d'onde <em>CSV</em>."),
+            ("2", "🎛️", "<strong>Configurez le filtre Butterworth passe-bande</strong> : définissez les fréquences de coupure basse et haute (Hz) et l'ordre du filtre. Activez/désactivez pour comparer signal filtré et brut."),
+            ("3", "🔍", "<strong>Ajustez le détecteur STA/LTA</strong> : la fenêtre STA (courte, 0.2–2 s) capture l'énergie d'onset ; la fenêtre LTA (longue, 5–60 s) suit le bruit de fond. Augmentez le seuil pour supprimer les faux déclenchements."),
+            ("4", "📊", "<strong>Explorez les onglets d'analyse</strong> : <em>Forme d'onde</em>, <em>Analyse spectrale</em>, <em>Spectrogramme</em>, <em>STA/LTA</em>, <em>Modèle de vitesse</em>, <em>Théorie &amp; Maths</em>."),
+            ("5", "💾", "<strong>Exportez vos résultats</strong> en CSV — signal, spectre FFT, PSD Welch, ratio STA/LTA — prêts pour Python, MATLAB ou Excel."),
         ],
     },
     "es": {
-        "title": "Cómo usar SeismicLens",
+        "title": "🚀 Cómo usar SeismicLens",
         "steps": [
-            ("1", "<b>Elige una fuente de datos</b> en la barra lateral: genera un sismo sintético, carga un archivo MiniSEED de IRIS/INGV, o carga un CSV."),
-            ("2", "<b>Configura el filtro Butterworth pasa-banda</b> (corte bajo, corte alto, orden). Actívalo o desactívalo para comparar señal filtrada y bruta."),
-            ("3", "<b>Ajusta el detector STA/LTA</b> (ventana STA, ventana LTA, umbral) para localizar automáticamente la onda P."),
-            ("4", "<b>Explora las pestañas</b>: Forma de onda, Análisis espectral (FFT + PSD), Espectrograma, STA/LTA, Modelo de velocidad, Teoría y Matemáticas."),
-            ("5", "<b>Exporta</b> la señal procesada, el espectro FFT, la PSD y la razón STA/LTA como archivos CSV."),
+            ("1", "📂", "<strong>Elige una fuente de datos</strong> en la barra lateral: genera un <em>sismo sintético</em> (instantáneo, sin archivo), carga un archivo <em>MiniSEED</em> real de IRIS/INGV, o carga una forma de onda <em>CSV</em>."),
+            ("2", "🎛️", "<strong>Configura el filtro Butterworth pasa-banda</strong>: establece las frecuencias de corte bajo y alto (Hz) y el orden. Actívalo/desactívalo para comparar señal filtrada y bruta."),
+            ("3", "🔍", "<strong>Ajusta el detector STA/LTA</strong>: la ventana STA (corta, 0.2–2 s) captura la energía de onset; la ventana LTA (larga, 5–60 s) rastrea el fondo. Sube el umbral para suprimir falsos disparos."),
+            ("4", "📊", "<strong>Explora las pestañas de análisis</strong>: <em>Forma de onda</em>, <em>Análisis espectral</em>, <em>Espectrograma</em>, <em>STA/LTA</em>, <em>Modelo de velocidad</em>, <em>Teoría y Matemáticas</em>."),
+            ("5", "💾", "<strong>Exporta tus resultados</strong> como CSV — señal, espectro FFT, PSD Welch, razón STA/LTA — listos para Python, MATLAB o Excel."),
         ],
     },
     "de": {
-        "title": "So benutze SeismicLens",
+        "title": "🚀 So verwendest du SeismicLens",
         "steps": [
-            ("1", "<b>Wähle eine Datenquelle</b> in der Seitenleiste: synthetisches Erdbeben generieren, MiniSEED-Datei von IRIS/INGV laden oder CSV hochladen."),
-            ("2", "<b>Konfiguriere den Butterworth-Bandpassfilter</b> (untere/obere Grenzfrequenz, Ordnung). Ein-/ausschalten um gefiltertes und Rohsignal zu vergleichen."),
-            ("3", "<b>Passe den STA/LTA-Detektor an</b> (STA-Fenster, LTA-Fenster, Schwelle) um den P-Wellen-Einsatz automatisch zu bestimmen."),
-            ("4", "<b>Erkunde die Tabs</b>: Wellenform, Spektralanalyse (FFT + PSD), Spektrogramm, STA/LTA, Geschwindigkeitsmodell, Theorie & Mathematik."),
-            ("5", "<b>Exportiere</b> das verarbeitete Signal, das FFT-Spektrum, die PSD und das STA/LTA-Verhältnis als CSV-Dateien."),
+            ("1", "📂", "<strong>Wähle eine Datenquelle</strong> in der Seitenleiste: Erzeuge ein <em>synthetisches Erdbeben</em> (sofort, keine Datei nötig), lade eine echte <em>MiniSEED</em>-Datei von IRIS/INGV hoch, oder lade eine <em>CSV</em>-Wellenform."),
+            ("2", "🎛️", "<strong>Konfiguriere den Butterworth-Bandpassfilter</strong>: Untere und obere Grenzfrequenz (Hz) und Filterordnung einstellen. Ein-/ausschalten um gefiltertes und Rohsignal zu vergleichen."),
+            ("3", "🔍", "<strong>Passe den STA/LTA-Detektor an</strong>: Das STA-Fenster (kurz, 0.2–2 s) erfasst die Onset-Energie; das LTA-Fenster (lang, 5–60 s) verfolgt den Hintergrund. Schwelle erhöhen um Fehlauslösungen zu unterdrücken."),
+            ("4", "📊", "<strong>Erkunde die Analyse-Tabs</strong>: <em>Wellenform</em>, <em>Spektralanalyse</em>, <em>Spektrogramm</em>, <em>STA/LTA</em>, <em>Geschwindigkeitsmodell</em>, <em>Theorie &amp; Mathematik</em>."),
+            ("5", "💾", "<strong>Exportiere deine Ergebnisse</strong> als CSV-Dateien — Signal, FFT-Spektrum, Welch-PSD, STA/LTA-Verhältnis — bereit für Python, MATLAB oder Excel."),
         ],
     },
 }
 
 guide = _GUIDE[lang]
 steps_html = "".join(
-    f"<div class='guide-step'><div class='guide-num'>{n}</div><div>{txt}</div></div>"
-    for n, txt in guide["steps"]
+    f"<div class='step-card'><div class='step-icon'>{ico}</div><div class='step-body'>{txt}</div></div>"
+    for _, ico, txt in guide["steps"]
 )
 st.markdown(
-    f"<div class='guide-box'><h4>{guide['title']}</h4>{steps_html}</div>",
+    f"<div class='sl-card'><div class='section-title' style='margin-top:0'>{guide['title']}</div>{steps_html}</div>",
     unsafe_allow_html=True,
 )
 
@@ -824,6 +1034,23 @@ tab_wave, tab_fft, tab_spec, tab_stalta, tab_model, tab_theory, tab_export = st.
 # ── Waveform ──────────────────────────────────────────────────────────────────
 with tab_wave:
     st.markdown(f"<div class='section-title'>{T('tab_wave', lang)}</div>", unsafe_allow_html=True)
+
+    # Tab intro
+    st.markdown(f"<div class='tab-intro'>{T('wave_desc', lang)}</div>", unsafe_allow_html=True)
+
+    # Active pills
+    pills_html = "<div class='pill-row'>"
+    pills_html += f"<span class='pill blue'>fs = {fs:.0f} Hz</span>"
+    pills_html += f"<span class='pill green'>N = {N} samples</span>"
+    if filter_on:
+        pills_html += f"<span class='pill violet'>Butterworth {f_low}–{f_high} Hz · order {filter_order}</span>"
+    else:
+        pills_html += f"<span class='pill amber'>⚠ Filter OFF — raw signal</span>"
+    if p_time:
+        pills_html += f"<span class='pill coral'>P-arrival @ {p_time:.2f} s</span>"
+    pills_html += "</div>"
+    st.markdown(pills_html, unsafe_allow_html=True)
+
     raw_ov = signal_tapered if show_raw and filter_on else None
     filt_label = T("wave_filtered", lang) if filter_on else T("wave_unfiltered", lang)
     fig_wave = make_waveform_fig(t, signal_proc, raw=raw_ov, p_time=p_time, s_time=s_time,
@@ -832,61 +1059,210 @@ with tab_wave:
 
     if p_time:
         st.markdown(
-            f"<div class='success-box'>{T('wave_p_detected', lang, t=p_time, thr=threshold)}</div>",
+            f"<div class='success-box'>✅ {T('wave_p_detected', lang, t=p_time, thr=threshold)}</div>",
             unsafe_allow_html=True,
         )
     if s_time and data_source == 0:
         sp_delay = s_time - (p_time or 0)
         st.markdown(
-            f"<div class='info-box'>{T('wave_s_info', lang, s=s_time, sp=sp_delay, d=sp_delay*8)}</div>",
+            f"<div class='info-box'>📐 {T('wave_s_info', lang, s=s_time, sp=sp_delay, d=sp_delay*8)}</div>",
             unsafe_allow_html=True,
         )
 
+    st.markdown("<div class='grad-div'></div>", unsafe_allow_html=True)
+
+    # Why filter + filter details
+    _fw_col1, _fw_col2 = st.columns(2)
+    with _fw_col1:
+        st.markdown(f"""
+<div class='key-concept'>
+<div class='kc-title'>🎛️ {T('filter_why_title', lang)}</div>
+<div class='kc-body'>{T('filter_why_body', lang)}</div>
+</div>""", unsafe_allow_html=True)
+
+    with _fw_col2:
+        if filter_on:
+            eff_order = 2 * filter_order
+            st.markdown(f"""
+<div class='key-concept'>
+<div class='kc-title'>⚙️ {T('filter_details_title', lang)}</div>
+<div class='kc-body'>
+<b>Low cut:</b> {f_low} Hz &nbsp;|&nbsp; <b>High cut:</b> {f_high} Hz &nbsp;|&nbsp; <b>Order:</b> {filter_order} → effective <b>{eff_order}</b> (zero-phase)<br>
+<b>Nyquist:</b> {fs/2:.1f} Hz &nbsp;|&nbsp; Roll-off: <span class='f-inline'>{40*filter_order} dB/decade</span><br><br>
+<code>sosfiltfilt</code> = forward + backward pass → zero phase distortion,
+preserving wave arrival times exactly.
+</div>
+</div>""", unsafe_allow_html=True)
+
     if filter_on:
-        eff_order = 2 * filter_order
-        with st.expander(T("filter_details_title", lang)):
+        with st.expander(T("filter_details_title", lang) + " — full math"):
             st.markdown(f"""
 **Parameters:**
 - Low cut: **{f_low} Hz** | High cut: **{f_high} Hz**
-- Order: **{filter_order}** (effective {eff_order} with zero-phase)
+- Order: **{filter_order}** (effective {eff_order} with zero-phase `sosfiltfilt`)
 - Nyquist: **{fs/2:.1f} Hz**
-- Implementation: `scipy.signal.sosfiltfilt` — Second-Order Sections, forward + backward pass
+- Implementation: `scipy.signal.sosfiltfilt` — Second-Order Sections
+
+**Why Second-Order Sections (SOS)?**
+A high-order IIR filter (e.g., order 8) has a long chain of multiply-adds.
+In direct form the coefficients have very different magnitudes → numerical overflow/underflow.
+SOS splits the filter into cascaded biquad (2nd-order) sections, each stable on its own.
 
 **Why zero-phase?**
-A causal filter delays different frequencies by different amounts, distorting wave arrival times.
-`sosfiltfilt` runs the filter forward then backward, cancelling all phase shift exactly.
+A causal filter delays different frequencies by different amounts (group delay ≠ constant),
+distorting seismic waveforms and shifting arrival times.
+`sosfiltfilt` runs the filter forward then backward: the phase responses cancel exactly,
+giving zero phase distortion with double the effective roll-off.
 """)
+            st.latex(r"|H(j\omega)|^2 = \frac{1}{1 + \left(\frac{\omega}{\omega_c}\right)^{2n}}")
 
 
 # ── Spectral Analysis ─────────────────────────────────────────────────────────
 with tab_fft:
     st.markdown(f"<div class='section-title'>{T('tab_fft', lang)}</div>", unsafe_allow_html=True)
+    st.markdown(f"<div class='tab-intro'>{T('fft_desc', lang)}</div>", unsafe_allow_html=True)
+
     cf1, cf2, cf3 = st.columns(3)
     cf1.markdown(metric_card(T("fft_domf", lang),    f"{dominant_f:.3f}", "Hz", "green"),  unsafe_allow_html=True)
     cf2.markdown(metric_card(T("fft_centroid", lang), f"{centroid_f:.3f}", "Hz", "violet"), unsafe_allow_html=True)
     cf3.markdown(metric_card(T("fft_bw", lang),       f"{bandwidth:.3f}",  "Hz", "amber"),  unsafe_allow_html=True)
 
+    # Concept grid
+    _fft_concepts = {
+        "en": [
+            ("📊", "Dominant Frequency", f"The frequency bin with the highest amplitude: <strong>{dominant_f:.3f} Hz</strong>. This is the most energetic frequency in the signal."),
+            ("🎯", "Spectral Centroid", f"The energy-weighted mean frequency: <strong>{centroid_f:.3f} Hz</strong>. It represents the 'centre of mass' of the spectrum — higher than dominant_f if energy spreads to high frequencies."),
+            ("📏", "Bandwidth (RMS)", f"The RMS spread of energy around the centroid: <strong>{bandwidth:.3f} Hz</strong>. Wide bandwidth = broad-band signal (e.g., impulsive source); narrow = quasi-monochromatic."),
+            ("🔢", "Frequency Resolution", f"Each FFT bin covers <strong>Δf = fs/N = {fs/N:.4f} Hz</strong>. To improve resolution, increase the signal duration (more samples N)."),
+        ],
+        "it": [
+            ("📊", "Frequenza dominante", f"Il bin con ampiezza massima: <strong>{dominant_f:.3f} Hz</strong>. È la frequenza più energetica del segnale."),
+            ("🎯", "Centroide spettrale", f"La media pesata per l'energia: <strong>{centroid_f:.3f} Hz</strong>. Rappresenta il 'centro di massa' dello spettro."),
+            ("📏", "Larghezza di banda (RMS)", f"La dispersione RMS dell'energia attorno al centroide: <strong>{bandwidth:.3f} Hz</strong>. Banda larga = sorgente impulsiva; stretta = quasi-monocromatica."),
+            ("🔢", "Risoluzione in frequenza", f"Ogni bin FFT copre <strong>Δf = fs/N = {fs/N:.4f} Hz</strong>. Per migliorare la risoluzione, aumentare la durata del segnale."),
+        ],
+        "fr": [
+            ("📊", "Fréquence dominante", f"Le bin avec l'amplitude maximale : <strong>{dominant_f:.3f} Hz</strong>. C'est la fréquence la plus énergétique du signal."),
+            ("🎯", "Centroïde spectral", f"La moyenne pondérée par l'énergie : <strong>{centroid_f:.3f} Hz</strong>. Représente le 'centre de masse' du spectre."),
+            ("📏", "Largeur de bande (RMS)", f"La dispersion RMS autour du centroïde : <strong>{bandwidth:.3f} Hz</strong>. Large = source impulsive ; étroite = quasi-monochromatique."),
+            ("🔢", "Résolution fréquentielle", f"Chaque bin FFT couvre <strong>Δf = fs/N = {fs/N:.4f} Hz</strong>. Pour améliorer la résolution, augmenter la durée du signal."),
+        ],
+        "es": [
+            ("📊", "Frecuencia dominante", f"El bin con amplitud máxima: <strong>{dominant_f:.3f} Hz</strong>. Es la frecuencia más energética de la señal."),
+            ("🎯", "Centroide espectral", f"La media ponderada por energía: <strong>{centroid_f:.3f} Hz</strong>. Representa el 'centro de masa' del espectro."),
+            ("📏", "Ancho de banda (RMS)", f"La dispersión RMS alrededor del centroide: <strong>{bandwidth:.3f} Hz</strong>. Ancho = fuente impulsiva; estrecho = casi-monocromático."),
+            ("🔢", "Resolución frecuencial", f"Cada bin FFT cubre <strong>Δf = fs/N = {fs/N:.4f} Hz</strong>. Para mejorar la resolución, aumentar la duración de la señal."),
+        ],
+        "de": [
+            ("📊", "Dominante Frequenz", f"Der Bin mit maximaler Amplitude: <strong>{dominant_f:.3f} Hz</strong>. Das ist die energiereichste Frequenz des Signals."),
+            ("🎯", "Spektralzentroid", f"Der energiegewichtete Mittelwert: <strong>{centroid_f:.3f} Hz</strong>. Repräsentiert den 'Schwerpunkt' des Spektrums."),
+            ("📏", "Bandbreite (RMS)", f"Die RMS-Streuung um den Zentroid: <strong>{bandwidth:.3f} Hz</strong>. Breit = impulsive Quelle; schmal = quasi-monochromatisch."),
+            ("🔢", "Frequenzauflösung", f"Jeder FFT-Bin umfasst <strong>Δf = fs/N = {fs/N:.4f} Hz</strong>. Für bessere Auflösung Signaldauer erhöhen."),
+        ],
+    }
+    _concepts = _fft_concepts[lang]
+    _cg_html = "<div class='concept-grid'>"
+    for ico, title, body in _concepts:
+        _cg_html += f"<div class='concept-card'><div class='cc-icon'>{ico}</div><div class='cc-title'>{title}</div><div class='cc-body'>{body}</div></div>"
+    _cg_html += "</div>"
+    st.markdown(_cg_html, unsafe_allow_html=True)
+
     st.plotly_chart(make_fft_fig(freqs, amplitudes, dominant_f, centroid_f), use_container_width=True)
 
+    st.markdown("<div class='grad-div'></div>", unsafe_allow_html=True)
+
     if show_phase:
-        st.markdown(f"<div class='section-title'>Phase Spectrum</div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='section-title'>Phase Spectrum ∠X(f)</div>", unsafe_allow_html=True)
         st.plotly_chart(make_phase_fig(freqs, phases_deg), use_container_width=True)
-        st.markdown(f"<div class='info-box'>{T('phase_info', lang)}</div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='info-box'>ℹ️ {T('phase_info', lang)}</div>", unsafe_allow_html=True)
+
+        with st.expander("📐 Phase — deeper explanation"):
+            st.markdown("""
+Each FFT coefficient **X(f)** is a **complex number** living in the 2D complex plane:
+""")
+            st.latex(r"X(f) = \text{Re}[X(f)] + j \cdot \text{Im}[X(f)] = |X(f)| \cdot e^{j\varphi(f)}")
+            st.markdown("""
+- **|X(f)|** = amplitude (distance from origin in the complex plane)
+- **φ(f) = ∠X(f)** = phase angle = `atan2(Im, Re)` ∈ [−π, π]
+
+**What does the phase tell us?**
+- **Random noise**: phases are uniformly distributed — no coherent structure.
+- **Impulsive signal** (P-wave onset): phases cluster together near the arrival time.
+- **Dispersive wave train** (surface waves): phase varies smoothly with frequency (group delay ≠ constant).
+- **Zero-phase filter**: after `sosfiltfilt`, the phase spectrum of the filtered signal equals the unfiltered one (phase is unchanged).
+""")
+
+    st.markdown("<div class='grad-div'></div>", unsafe_allow_html=True)
 
     if show_psd_toggle:
-        st.markdown(f"<div class='section-title'>Power Spectral Density — Welch</div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='section-title'>Power Spectral Density (PSD) — Welch method</div>", unsafe_allow_html=True)
         st.plotly_chart(make_psd_fig(f_psd, psd), use_container_width=True)
-        st.markdown(f"<div class='info-box'>{T('psd_info', lang)}</div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='info-box'>ℹ️ {T('psd_info', lang)}</div>", unsafe_allow_html=True)
+
+        with st.expander("📈 PSD — deeper explanation"):
+            st.markdown("""
+**Why not just use the FFT amplitude²?**
+A single FFT of a long signal gives a **very noisy** power estimate — each frequency bin has
+high variance because it is computed from just one complex number.
+
+**Welch's method** (1967) reduces variance by averaging:
+""")
+            st.latex(r"S(f) = \frac{1}{K} \sum_{k=1}^{K} \left| \text{FFT}\{x_k[n] \cdot w[n]\} \right|^2")
+            st.markdown("""
+- Split signal into **K overlapping segments** (50% overlap default)
+- Apply **Hann window** to each segment (reduces spectral leakage)
+- Compute FFT² of each segment
+- **Average** → variance reduced by ~1/K compared to single FFT
+
+**Units:** counts²/Hz (raw) or dB re 1 count²/Hz (log scale, as shown).
+**dB conversion:** `PSD_dB = 10 · log₁₀(PSD)`
+""")
+            st.latex(r"\text{PSD}_{dB}(f) = 10 \cdot \log_{10}\left(S(f)\right)")
 
 
 # ── Spectrogram ───────────────────────────────────────────────────────────────
 with tab_spec:
     if show_spec_toggle:
         st.markdown(f"<div class='section-title'>{T('tab_spec', lang)} — STFT</div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='tab-intro'>{T('spec_desc', lang)}</div>", unsafe_allow_html=True)
         try:
             t_spec, f_spec, Sxx = compute_spectrogram(signal_proc, fs)
             st.plotly_chart(make_spectrogram_fig(t_spec, f_spec, Sxx), use_container_width=True)
-            st.markdown(f"<div class='info-box'>{T('spec_info', lang)}</div>", unsafe_allow_html=True)
+
+            st.markdown(f"<div class='info-box'>ℹ️ {T('spec_info', lang)}</div>", unsafe_allow_html=True)
+
+            _spec_read = {
+                "en": "🔍 <strong>How to read this plot:</strong> The x-axis is time (s), y-axis is frequency (Hz), colour is energy (dB). Look for: <em>vertical bright streaks</em> = impulsive onset (P/S arrival); <em>horizontal bands</em> = monochromatic interference; <em>diagonal stripes</em> = dispersive surface waves.",
+                "it": "🔍 <strong>Come leggere questo grafico:</strong> L'asse x è il tempo (s), l'asse y la frequenza (Hz), il colore è l'energia (dB). Cerca: <em>strisce verticali luminose</em> = onset impulsivo (arrivo P/S); <em>bande orizzontali</em> = interferenza monocromatica; <em>strisce diagonali</em> = onde superficiali dispersive.",
+                "fr": "🔍 <strong>Comment lire ce graphique :</strong> L'axe x est le temps (s), l'axe y la fréquence (Hz), la couleur est l'énergie (dB). Cherchez : <em>bandes verticales lumineuses</em> = onset impulsif (arrivée P/S) ; <em>bandes horizontales</em> = interférence monochromatique ; <em>bandes diagonales</em> = ondes de surface dispersives.",
+                "es": "🔍 <strong>Cómo leer este gráfico:</strong> El eje x es tiempo (s), el eje y frecuencia (Hz), el color es energía (dB). Busca: <em>franjas verticales brillantes</em> = onset impulsivo (llegada P/S); <em>bandas horizontales</em> = interferencia monocromática; <em>franjas diagonales</em> = ondas superficiales dispersivas.",
+                "de": "🔍 <strong>Wie man dieses Diagramm liest:</strong> X-Achse = Zeit (s), Y-Achse = Frequenz (Hz), Farbe = Energie (dB). Suche nach: <em>vertikalen hellen Streifen</em> = impulsiver Onset (P/S-Ankunft); <em>horizontalen Bändern</em> = monochromatische Interferenz; <em>diagonalen Streifen</em> = dispersive Oberflächenwellen.",
+            }
+            st.markdown(f"<div class='warn-box'>{_spec_read[lang]}</div>", unsafe_allow_html=True)
+
+            with st.expander("⚛️ STFT & Heisenberg Uncertainty — detailed explanation"):
+                st.markdown("### Short-Time Fourier Transform (STFT)")
+                st.latex(r"\text{STFT}(\tau, f) = \int_{-\infty}^{\infty} x(t) \cdot w(t - \tau) \cdot e^{-j 2\pi f t} \, dt")
+                st.markdown("""
+In discrete form with a Hann window of length M:
+- The signal is **windowed** (masked) around time τ, keeping only M samples.
+- The **FFT** of those M samples gives the local spectrum at time τ.
+- The window slides forward by **hop_size** samples, producing a 2D matrix.
+
+**Time–Frequency Trade-off (Heisenberg–Gabor Uncertainty):**
+""")
+                st.latex(r"\Delta t \cdot \Delta f \geq \frac{1}{4\pi}")
+                st.markdown("""
+| Window choice | Time resolution Δt | Frequency resolution Δf |
+|---|---|---|
+| **Short window** (e.g., 64 samples) | Fine (ms) | Coarse (several Hz) |
+| **Long window** (e.g., 1024 samples) | Coarse (hundreds of ms) | Fine (fractions of Hz) |
+
+There is **no way to get both simultaneously** — this is a fundamental limit, not a computational one.
+
+**Welch PSD vs Spectrogram:**
+The Welch PSD (shown in Spectral Analysis tab) is the **time-averaged** spectrogram — it collapses the time axis and shows only the mean power per frequency.
+""")
         except Exception as e:
             st.warning(f"Spectrogram error: {e}")
     else:
@@ -897,6 +1273,7 @@ with tab_spec:
 with tab_stalta:
     if show_stalta_tog:
         st.markdown(f"<div class='section-title'>{T('tab_stalta', lang)}</div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='tab-intro'>{T('stalta_desc', lang)}</div>", unsafe_allow_html=True)
         try:
             stalta_vals = compute_sta_lta(signal_proc, fs, sta_len, lta_len)
             t_sl = np.linspace(0, len(stalta_vals) / fs, len(stalta_vals))
@@ -905,28 +1282,53 @@ with tab_stalta:
             n_trig = int(np.sum(np.diff((stalta_vals > threshold).astype(int)) > 0))
             if p_time:
                 st.markdown(
-                    f"<div class='success-box'>{T('stalta_trigger_ok', lang, t=p_time, n=n_trig)}</div>",
+                    f"<div class='success-box'>✅ {T('stalta_trigger_ok', lang, t=p_time, n=n_trig)}</div>",
                     unsafe_allow_html=True,
                 )
             else:
-                st.markdown(f"<div class='warn-box'>{T('stalta_no_trigger', lang)}</div>", unsafe_allow_html=True)
+                st.markdown(f"<div class='warn-box'>⚠️ {T('stalta_no_trigger', lang)}</div>", unsafe_allow_html=True)
 
+            st.markdown("<div class='grad-div'></div>", unsafe_allow_html=True)
+
+            # Parameter cards
             sta_n = int(sta_len * fs)
             lta_n = int(lta_len * fs)
-            with st.expander("STA/LTA — algorithm details"):
+            _sl_ratio = lta_len / sta_len
+            _sl_color = "green" if _sl_ratio >= 10 else "amber"
+            _pc1, _pc2, _pc3, _pc4 = st.columns(4)
+            _pc1.markdown(metric_card("STA window", f"{sta_len}", "s", "blue"),   unsafe_allow_html=True)
+            _pc2.markdown(metric_card("LTA window", f"{lta_len}", "s", "violet"), unsafe_allow_html=True)
+            _pc3.markdown(metric_card("LTA / STA",  f"{_sl_ratio:.1f}", "×", _sl_color), unsafe_allow_html=True)
+            _pc4.markdown(metric_card("Threshold",  f"{threshold}", "",  "coral"), unsafe_allow_html=True)
+
+            with st.expander("🔬 STA/LTA — algorithm details & tuning guide"):
+                st.markdown("### Short-Term Average / Long-Term Average")
+                st.latex(r"\text{STA}(t) = \frac{1}{N_{sta}} \sum_{k=0}^{N_{sta}-1} x^2[t-k]")
+                st.latex(r"\text{LTA}(t) = \frac{1}{N_{lta}} \sum_{k=0}^{N_{lta}-1} x^2[t-k]")
+                st.latex(r"R(t) = \frac{\text{STA}(t)}{\text{LTA}(t)} \quad \xrightarrow{\text{trigger when}} \quad R > \theta")
                 st.markdown(f"""
-**STA window:** {sta_len} s ({sta_n} samples) &nbsp;|&nbsp;
-**LTA window:** {lta_len} s ({lta_n} samples) &nbsp;|&nbsp;
-**Threshold:** {threshold}
+**Current settings:**
+- STA = {sta_len} s → **{sta_n} samples** (captures onset energy burst)
+- LTA = {lta_len} s → **{lta_n} samples** (tracks background noise floor)
+- LTA/STA ratio = **{_sl_ratio:.1f}×** {'✅ good' if _sl_ratio >= 10 else '⚠️ LTA should be ≥10× STA for stable detection'}
+- Threshold = **{threshold}** (trigger when R > {threshold})
 
+**O(N) implementation via prefix sums:**
 ```
-STA(t) = mean( x[t - {sta_n} : t]^2 )
-LTA(t) = mean( x[t - {lta_n} : t]^2 )
-R(t)   = STA(t) / LTA(t)   ->  trigger when R > {threshold}
+cs = cumsum(x²)                      # precomputed once, O(N)
+STA(t) = (cs[t+1] - cs[t-N_sta]) / N_sta    # O(1) per sample
+LTA(t) = (cs[t+1] - cs[t-N_lta]) / N_lta    # O(1) per sample
 ```
 
-Implementation: O(N) via prefix sums on squared samples — `cs = cumsum(x^2)`.  
-Reference: Allen (1978), *BSSA*.
+**Tuning guide:**
+| Scenario | STA | LTA | Threshold |
+|---|---|---|---|
+| Local earthquake (short) | 0.2–0.5 s | 10–20 s | 3–4 |
+| Regional earthquake | 0.5–1 s | 20–40 s | 3–5 |
+| Teleseismic | 1–2 s | 30–60 s | 2–3 |
+| Very noisy data | 0.5 s | 30 s | 5–8 |
+
+Reference: Allen, R.V. (1978), *Automatic earthquake recognition and timing from single traces*. BSSA, 68(5).
 """)
         except Exception as e:
             st.warning(f"STA/LTA error: {e}")
@@ -937,6 +1339,7 @@ Reference: Allen (1978), *BSSA*.
 # ── Velocity Model ────────────────────────────────────────────────────────────
 with tab_model:
     st.markdown(f"<div class='section-title'>{T('tab_model', lang)}</div>", unsafe_allow_html=True)
+    st.markdown(f"<div class='tab-intro'>{T('model_desc', lang)}</div>", unsafe_allow_html=True)
 
     layer_names = T("vel_layers", lang)
     table_html = (
@@ -963,6 +1366,66 @@ with tab_model:
 
     st.plotly_chart(make_velocity_model_fig(layer_names), use_container_width=True)
 
+    st.markdown("<div class='grad-div'></div>", unsafe_allow_html=True)
+
+    # Elastic moduli concept grid
+    _vp_concepts = {
+        "en": [
+            ("🔵", "P-wave velocity (Vp)", "Compressional waves — particles vibrate parallel to propagation direction. Controlled by bulk modulus K (resistance to compression) + shear modulus G + density ρ."),
+            ("🟢", "S-wave velocity (Vs)", "Shear waves — particles vibrate perpendicular to propagation. Controlled only by shear modulus G. <strong>Vs = 0 in fluids</strong> because fluids cannot sustain shear stress (G = 0)."),
+            ("🟡", "Vp/Vs ratio", "Key diagnostic indicator. Poisson solid: Vp/Vs = √3 ≈ 1.732, ν = 0.25. High Vp/Vs (> 1.8) can indicate fluid saturation, partial melt, or high pore pressure."),
+            ("🟣", "Poisson's ratio ν", "Ratio of transverse to longitudinal strain. Range: 0 (incompressible shear) to 0.5 (incompressible liquid). Typical crustal rocks: 0.24–0.28."),
+        ],
+        "it": [
+            ("🔵", "Velocità onda P (Vp)", "Onde compressive — le particelle vibrano parallele alla direzione di propagazione. Controllata dal modulo di bulk K + modulo di taglio G + densità ρ."),
+            ("🟢", "Velocità onda S (Vs)", "Onde di taglio — le particelle vibrano perpendicolari alla propagazione. Controllata solo dal modulo G. <strong>Vs = 0 nei fluidi</strong> perché i fluidi non sopportano sforzi di taglio."),
+            ("🟡", "Rapporto Vp/Vs", "Indicatore diagnostico chiave. Solido di Poisson: Vp/Vs = √3 ≈ 1.732, ν = 0.25. Valori alti (> 1.8) indicano saturazione di fluidi, fusione parziale o alta pressione dei pori."),
+            ("🟣", "Rapporto di Poisson ν", "Rapporto tra deformazione trasversale e longitudinale. Intervallo: 0 (solido incomprimibile in taglio) a 0.5 (liquido incomprimibile). Rocce crostali tipiche: 0.24–0.28."),
+        ],
+        "fr": [
+            ("🔵", "Vitesse onde P (Vp)", "Ondes compressionnelles — les particules vibrent parallèlement à la direction de propagation. Contrôlée par le module de compressibilité K, le module de cisaillement G et la densité ρ."),
+            ("🟢", "Vitesse onde S (Vs)", "Ondes de cisaillement — les particules vibrent perpendiculairement. Contrôlée uniquement par G. <strong>Vs = 0 dans les fluides</strong> car ils ne peuvent pas soutenir une contrainte de cisaillement."),
+            ("🟡", "Rapport Vp/Vs", "Indicateur diagnostique clé. Solide de Poisson : Vp/Vs = √3 ≈ 1.732, ν = 0.25. Valeurs élevées (> 1.8) indiquent saturation en fluide, fusion partielle ou haute pression des pores."),
+            ("🟣", "Coefficient de Poisson ν", "Rapport déformation transversale / longitudinale. Plage : 0 à 0.5. Roches crustales typiques : 0.24–0.28."),
+        ],
+        "es": [
+            ("🔵", "Velocidad onda P (Vp)", "Ondas compresionales — las partículas vibran paralelas a la dirección de propagación. Controlada por módulo de bulk K + módulo de corte G + densidad ρ."),
+            ("🟢", "Velocidad onda S (Vs)", "Ondas de corte — las partículas vibran perpendiculares. Controlada solo por G. <strong>Vs = 0 en fluidos</strong> porque no pueden sostener esfuerzos de corte."),
+            ("🟡", "Relación Vp/Vs", "Indicador diagnóstico clave. Sólido de Poisson: Vp/Vs = √3 ≈ 1.732, ν = 0.25. Valores altos (> 1.8) indican saturación de fluidos, fusión parcial o alta presión de poros."),
+            ("🟣", "Razón de Poisson ν", "Relación deformación transversal / longitudinal. Rango: 0 a 0.5. Rocas corticales típicas: 0.24–0.28."),
+        ],
+        "de": [
+            ("🔵", "P-Wellengeschwindigkeit (Vp)", "Kompressionswellen — Partikel schwingen parallel zur Ausbreitungsrichtung. Gesteuert durch Kompressionsmodul K + Schubmodul G + Dichte ρ."),
+            ("🟢", "S-Wellengeschwindigkeit (Vs)", "Scherwellen — Partikel schwingen senkrecht. Nur durch G gesteuert. <strong>Vs = 0 in Flüssigkeiten</strong>, da diese keine Scherspannung aufnehmen können."),
+            ("🟡", "Vp/Vs-Verhältnis", "Wichtiger Diagnoseindikator. Poisson-Körper: Vp/Vs = √3 ≈ 1.732, ν = 0.25. Hohe Werte (> 1.8) deuten auf Fluidsättigung, partielle Schmelze oder hohen Porendruck hin."),
+            ("🟣", "Poisson-Zahl ν", "Verhältnis von Quer- zu Längsdehnung. Bereich: 0 bis 0.5. Typische Krustengesteine: 0.24–0.28."),
+        ],
+    }
+    _vm_grid = "<div class='concept-grid'>"
+    for ico, title, body in _vp_concepts[lang]:
+        _vm_grid += f"<div class='concept-card'><div class='cc-icon'>{ico}</div><div class='cc-title'>{title}</div><div class='cc-body'>{body}</div></div>"
+    _vm_grid += "</div>"
+    st.markdown(_vm_grid, unsafe_allow_html=True)
+
+    with st.expander("⚙️ Elastic wave equations — full derivation"):
+        st.latex(r"V_P = \sqrt{\frac{K + \frac{4}{3}G}{\rho}}")
+        st.latex(r"V_S = \sqrt{\frac{G}{\rho}}")
+        st.latex(r"\nu = \frac{(V_P/V_S)^2 - 2}{2\left[(V_P/V_S)^2 - 1\right]}")
+        st.markdown("""
+Where:
+- **K** = bulk modulus (resistance to uniform compression, Pa)
+- **G** = shear modulus (resistance to shear deformation, Pa)
+- **ρ** = density (kg/m³)
+- **ν** = Poisson's ratio (dimensionless, 0 < ν < 0.5 for stable materials)
+
+**Why does Vp > Vs always?**
+Vp involves both K and G (compressional + shear restoring forces), while Vs only involves G.
+Since K > 0 always, we have K + 4G/3 > G, hence Vp > Vs for any solid material.
+
+**Fluid indicator:** In fully saturated rock, the pore fluid dramatically increases K (fluid is hard to compress)
+while leaving G unchanged → Vp rises, Vs stays the same → Vp/Vs increases above √3.
+""")
+
     st.markdown("""
     <div class='sl-card'>
     <div class='theory-title'>Vp/Vs ratio and Poisson's ratio</div>
@@ -980,167 +1443,273 @@ Vs = sqrt[G / ρ]              (Vs = 0 in fluids since G = 0)</div>
 # ── Theory & Math ─────────────────────────────────────────────────────────────
 with tab_theory:
     st.markdown(f"<div class='section-title'>{T('tab_theory', lang)}</div>", unsafe_allow_html=True)
+    st.markdown("""
+<div class='tab-intro'>
+This tab is your <strong>mathematical reference</strong> for every algorithm used in SeismicLens.
+Each section explains the concept from first principles, gives the key equations, and links to how
+the algorithm is used in the other tabs.
+</div>""", unsafe_allow_html=True)
 
-    with st.expander("Discrete Fourier Transform (DFT) & Complex Numbers", expanded=True):
+    # ── 1. DFT / FFT ──────────────────────────────────────────────────────────
+    with st.expander("📐 1 — Discrete Fourier Transform (DFT) & Fast FFT", expanded=True):
+        st.markdown("#### What does the FFT actually do?")
         st.markdown("""
-        <div class='theory-card'>
-        <div class='theory-title'>Euler's formula and complex exponentials</div>
-        <div class='theory-body'>
-        The DFT decomposes a discrete signal x[n] (n = 0, …, N−1) into N complex sinusoids.
-        Each basis function is a complex exponential rooted in Euler's formula:
-        </div>
-        <div class='math-block'>e^(jθ) = cos(θ) + j·sin(θ)          (Euler's formula)
-
-X[k] = sum_{n=0}^{N-1}  x[n] · e^(−j·2π·k·n/N)
-
-Each X[k] is a complex number  X[k] ∈ ℂ:
-  |X[k]|      →  amplitude at frequency  f_k = k·fs/N  (Hz)
-  ∠X[k]       →  phase  =  arg(X[k])  =  atan2(Im, Re)
-  X[k].real   →  cosine component  (in-phase)
-  X[k].imag   →  sine component    (quadrature)</div>
-        </div>""", unsafe_allow_html=True)
-
+A time-domain signal **x[n]** is a list of N amplitude values sampled at rate fs.
+The DFT converts it into N **complex-valued frequency coefficients** X[k].
+Each coefficient tells you *how much of a pure sinusoid at frequency f_k = k·fs/N is present*.
+""")
+        st.latex(r"X[k] = \sum_{n=0}^{N-1} x[n] \cdot e^{-j \frac{2\pi k n}{N}}, \quad k = 0, 1, \ldots, N-1")
         st.markdown("""
-        <div class='theory-card'>
-        <div class='theory-title'>Fast Fourier Transform (FFT) — O(N log N)</div>
-        <div class='theory-body'>
-        The FFT (Cooley & Tukey, 1965) reduces the naive O(N²) DFT to O(N log N) by
-        recursively splitting the sum into even and odd indices (decimation-in-time).
-        For real-valued signals the spectrum is Hermitian — X[N−k] = conj(X[k]) —
-        so only N/2+1 unique bins exist. This is exploited by <code>scipy.fft.rfft</code>.<br><br>
-        Hann window reduces spectral leakage from non-periodic signals:
-        </div>
-        <div class='math-block'>w[n] = 0.5 · (1 − cos(2π·n / (N−1)))     (Hann window)
-
-One-sided amplitude spectrum (after window correction):
-  A[k] = (2/N) · |X[k]|     for k = 1 … N/2−1
-  A[0] = (1/N) · |X[0]|     (DC component, factor 1 not 2)
-
-Frequency resolution:  Δf = fs / N  (Hz per bin)</div>
-        </div>""", unsafe_allow_html=True)
-
-    with st.expander("Seismic Wave Physics"):
+The complex exponential (from **Euler's formula**) is the key building block:
+""")
+        st.latex(r"e^{j\theta} = \cos(\theta) + j\sin(\theta)")
         st.markdown("""
-        <div class='theory-card'>
-        <div class='theory-title'>Body waves and elastic moduli</div>
-        <div class='theory-body'>
-        Seismic waves propagate by elastic deformation. Two body-wave types exist:
-        </div>
-        <div class='math-block'>P-wave (compressional, fastest):
-  Vp = sqrt[(K + 4G/3) / ρ]   →  5.8–8.0 km/s in the crust/mantle
+So each DFT basis function is a **cosine** (real part) + **sine** (imaginary part) at frequency f_k.
+The DFT projects the signal onto each basis function (inner product), measuring:
+- `Re(X[k])` → how much of the cosine at f_k is in the signal
+- `Im(X[k])` → how much of the sine at f_k is in the signal
+- `|X[k]|` = √(Re² + Im²) → total **amplitude** at f_k
+- `∠X[k]` = atan2(Im, Re) → **phase** at f_k
 
-S-wave (shear, slower):
-  Vs = sqrt[G / ρ]             →  3.4–4.5 km/s
-  Vs = 0 in liquids  (G = 0 → shear modulus vanishes)
+#### Why is the FFT faster?
+The naïve DFT requires **O(N²)** multiplications. The Cooley-Tukey FFT (1965) exploits the periodicity
+of e^{-j2πkn/N} to recursively split the sum (decimation-in-time), reducing cost to **O(N log N)**.
+For N = 100,000 this is ~10,000× faster.
 
-Surface waves (Rayleigh, Love) — dispersive, slower than S:
-  V_Rayleigh ≈ 0.92 · Vs
-  V_Love     ≈ Vs  (frequency-dependent)</div>
-        </div>
-        <div class='theory-card'>
-        <div class='theory-title'>Travel time and Wadati method</div>
-        <div class='theory-body'>
-        For a local earthquake at focal depth h and epicentral distance d:
-        </div>
-        <div class='math-block'>Hypocentral distance:   R = sqrt(d² + h²)
+#### One-sided spectrum for real signals
+Real signals have **Hermitian symmetry**: X[N-k] = X[k]*. So only N/2+1 bins are unique.
+`scipy.fft.rfft` exploits this and returns only the positive-frequency half.
+Normalisation to recover true amplitude:
+""")
+        st.latex(r"A[k] = \frac{2}{N} |X[k]|, \quad k = 1, \ldots, \frac{N}{2}-1")
+        st.markdown("""
+**Hann window** is applied before the FFT to reduce **spectral leakage** — the smearing of energy 
+from a strong frequency bin into neighbouring bins that occurs when the signal is not an integer 
+number of cycles within the window.
+""")
+        st.latex(r"w[n] = 0.5\left(1 - \cos\!\left(\frac{2\pi n}{N-1}\right)\right)")
 
-Travel times:   t_P = R / Vp
-                t_S = R / Vs
+    # ── 2. Butterworth Filter ──────────────────────────────────────────────────
+    with st.expander("🎛️ 2 — Butterworth Bandpass Filter"):
+        st.markdown("""
+#### Why Butterworth?
+The Butterworth filter is **maximally flat in the passband** — it has no ripple (unlike Chebyshev
+or elliptic filters). This is important in seismology because we need to preserve the relative
+amplitudes of waves inside the passband.
 
-Wadati (1933) — epicentral distance from S−P delay:
-  d ≈ (t_S − t_P) · Vp · Vs / (Vp − Vs)</div>
-        </div>""", unsafe_allow_html=True)
+#### Transfer function
+In the Laplace (s) domain, the N-th order low-pass Butterworth has:
+""")
+        st.latex(r"|H(j\omega)|^2 = \frac{1}{1 + \left(\frac{\omega}{\omega_c}\right)^{2n}}")
+        st.markdown("""
+- At ω = ω_c (corner frequency): |H| = 1/√2 = −3 dB (half-power point)
+- Roll-off beyond ω_c: **20n dB/decade** (one-pass)
+- The poles lie on a circle of radius ω_c in the s-plane at angles (2k+n-1)π/2n
 
-    with st.expander("Butterworth Filter Design"):
+A **bandpass** is formed by cascading a high-pass (removes below f_low) and a low-pass (removes above f_high):
+""")
         eff = 2 * filter_order
         rolloff = 20 * filter_order
         eff_rolloff = 40 * filter_order
+        st.latex(r"H_{BP}(s) = H_{HP}(s) \cdot H_{LP}(s)")
         st.markdown(f"""
-        <div class='theory-card'>
-        <div class='theory-title'>Transfer function and frequency response</div>
-        <div class='theory-body'>
-        The Butterworth filter is maximally flat in the passband — no ripple.
-        Its poles lie on a circle of radius ω_c in the s-plane.
-        Current settings: order {filter_order} → effective order {eff} (zero-phase).
-        </div>
-        <div class='math-block'>|H(jω)|² = 1 / [1 + (ω/ω_c)^(2·{filter_order})]
+**Current filter:** order {filter_order} → effective order **{eff}** (zero-phase `sosfiltfilt`)
+→ roll-off = **{eff_rolloff} dB/decade** beyond the corner frequencies.
 
-Roll-off beyond ω_c:  20·{filter_order} = {rolloff} dB/decade  (one-pass)
-With sosfiltfilt (zero-phase, effective order {eff}):
-  roll-off = 40·{filter_order} = {eff_rolloff} dB/decade
+#### Why Second-Order Sections (SOS)?
+A high-order IIR filter expressed as a single fraction H(z) = B(z)/A(z) is numerically unstable
+for orders ≥ 8 — the large polynomial coefficients cause floating-point overflow.
+SOS **factorises** H(z) into a cascade of stable biquad (2nd-order) sections:
+""")
+        st.latex(r"H(z) = \prod_{k=1}^{n/2} \frac{b_{0k} + b_{1k} z^{-1} + b_{2k} z^{-2}}{1 + a_{1k} z^{-1} + a_{2k} z^{-2}}")
 
-Band-pass = product of low-pass × high-pass transfer functions.
-SOS form (Second-Order Sections) for numerical stability:
-  H(z) = product_k  (b0_k + b1_k·z⁻¹ + b2_k·z⁻²)
-                   / (1   + a1_k·z⁻¹ + a2_k·z⁻²)</div>
-        </div>""", unsafe_allow_html=True)
+        st.markdown("""
+#### Zero-phase filtering
+`sosfiltfilt` applies the filter **forward** then **backward** through the signal.
+The two passes have opposite phase responses that cancel exactly, giving:
+- ✅ **Zero phase distortion** → arrival times preserved exactly
+- ✅ Effective order **doubled**: order n → effective 2n, roll-off doubled
+- ⚠️ Signal must be long enough to avoid edge artefacts (rule: ≥ 3× filter order / f_low)
+""")
 
-    with st.expander("STA/LTA Algorithm"):
+    # ── 3. STA/LTA ────────────────────────────────────────────────────────────
+    with st.expander("🔍 3 — STA/LTA Seismic Phase Detector"):
+        st.markdown("""
+#### Intuition
+When a seismic wave arrives, the signal energy suddenly **increases sharply**.
+STA/LTA exploits this: the short-term window (STA) tracks the instantaneous energy;
+the long-term window (LTA) tracks the background noise level.
+When the ratio STA/LTA spikes above a threshold, a phase is declared.
+""")
+        st.latex(r"\text{STA}(t) = \frac{1}{N_{sta}} \sum_{k=0}^{N_{sta}-1} x^2[t-k]")
+        st.latex(r"\text{LTA}(t) = \frac{1}{N_{lta}} \sum_{k=0}^{N_{lta}-1} x^2[t-k]")
+        st.latex(r"R(t) = \frac{\text{STA}(t)}{\text{LTA}(t)}")
         st.markdown(f"""
-        <div class='theory-card'>
-        <div class='theory-title'>Short-Term vs Long-Term Average ratio</div>
-        <div class='theory-body'>
-        Proposed by Allen (1978). The ratio spikes when a seismic phase arrives because
-        short-term energy rises sharply while long-term energy reacts slowly.
-        Squaring the samples tracks energy regardless of polarity.
-        </div>
-        <div class='math-block'>STA(t) = (1/N_sta) · sum_{{k=0}}^{{N_sta-1}}  x²[t−k]
-LTA(t) = (1/N_lta) · sum_{{k=0}}^{{N_lta-1}}  x²[t−k]
-R(t)   = STA(t) / LTA(t)        trigger when R > {threshold}
+**Why square the samples?**
+Squaring makes the metric invariant to the sign (polarity) of the signal — a negative spike
+is just as impulsive as a positive one. It also tracks **energy** rather than amplitude.
 
-Current:  N_sta = {int(sta_len*fs)} samples ({sta_len} s)
-          N_lta = {int(lta_len*fs)} samples ({lta_len} s)
+**O(N) implementation** via prefix sums (cumulative sum of x²):
+```python
+cs = np.cumsum(x**2)       # precompute once  →  O(N)
+STA[t] = (cs[t] - cs[t - N_sta]) / N_sta      # O(1) per sample
+LTA[t] = (cs[t] - cs[t - N_lta]) / N_lta      # O(1) per sample
+```
 
-O(N) implementation with prefix sums:
-  cs     = cumsum(x²)                       (precomputed once)
-  STA(t) = (cs[t+1] - cs[t-N_sta+1]) / N_sta</div>
-        </div>""", unsafe_allow_html=True)
+Without prefix sums, a naïve sliding-window sum would be **O(N × max(N_sta, N_lta))** — orders of
+magnitude slower for long LTA windows.
 
-    with st.expander("Spectrogram & Time-Frequency Uncertainty"):
+Reference: Allen, R.V. (1978). *Automatic earthquake recognition and timing from single traces*.
+Bulletin of the Seismological Society of America, 68(5), 1521–1532.
+""")
+
+    # ── 4. Spectrogram / STFT ─────────────────────────────────────────────────
+    with st.expander("🎨 4 — Spectrogram & Time-Frequency Analysis"):
         st.markdown("""
-        <div class='theory-card'>
-        <div class='theory-title'>Short-Time Fourier Transform (STFT)</div>
-        <div class='theory-body'>
-        The STFT slides a window w[m] along the signal and computes the DFT of each frame,
-        producing a 2D time–frequency representation.
-        </div>
-        <div class='math-block'>STFT(τ, f) = sum_n  x[n] · w[n−τ] · e^(−j·2π·f·n/fs)
-
-Uncertainty principle (analogous to Heisenberg):
-  Δt · Δf  ≥  1/(4π)
-
-Wide window  →  fine frequency resolution, coarse time resolution
-Narrow window →  fine time resolution,      coarse frequency resolution
-
-Welch PSD  =  average of |STFT(τ,f)|² over all K frames
-           →  variance reduced by factor √K vs single FFT</div>
-        </div>""", unsafe_allow_html=True)
-
-    with st.expander("Magnitude Scales (Richter & Moment)"):
+#### Why a spectrogram?
+The FFT gives the **global** frequency content over the entire signal — it can't tell you *when*
+each frequency is present. A spectrogram solves this by computing the FFT locally in time.
+""")
+        st.latex(r"\text{STFT}(\tau, f) = \sum_{n} x[n] \cdot w[n - \tau] \cdot e^{-j2\pi f n / f_s}")
         st.markdown("""
-        <div class='theory-card'>
-        <div class='theory-title'>Local magnitude and seismic moment</div>
-        <div class='theory-body'>
-        Richter (1935) defined local magnitude from the peak ground motion on a
-        Wood-Anderson seismograph, corrected for distance:
-        </div>
-        <div class='math-block'>M_L = log10(A) − log10(A_0(Δ))
-  A     = peak amplitude on Wood-Anderson instrument (μm)
-  A_0   = empirical distance correction
+The spectrogram is the squared magnitude: `|STFT(τ,f)|²`, displayed in dB.
 
-SeismicLens synthetic amplitude scaling:
-  A_peak  ∝  10^(0.8·M − 2.5)
+#### Heisenberg-Gabor Uncertainty Principle
+There is a **fundamental trade-off** between time and frequency resolution — it cannot be overcome
+by any algorithm:
+""")
+        st.latex(r"\Delta t \cdot \Delta f \geq \frac{1}{4\pi}")
+        st.markdown("""
+| Window size | Δt (time res.) | Δf (freq. res.) | Best for |
+|---|---|---|---|
+| Short (32–128 pts) | Fine (ms) | Coarse (Hz) | Impulsive arrivals, onset timing |
+| Long (512–2048 pts) | Coarse (100s ms) | Fine (0.1 Hz) | Slow dispersive waves |
 
-Moment magnitude M_w (Hanks & Kanamori, 1979):
-  M_w = (2/3) · log10(M_0) − 10.7
-  M_0 = μ · A_fault · D       (N·m)
-  μ   = shear modulus, A_fault = rupture area, D = average slip</div>
-        </div>""", unsafe_allow_html=True)
+In SeismicLens, SciPy's `scipy.signal.spectrogram` uses a Hann window of length `nperseg = min(256, N//4)`
+with 75% overlap, balancing time and frequency resolution for typical seismic signals.
+
+#### Reading seismic spectrograms
+- **Vertical bright streaks** at early time → P or S wave arrival (broadband, impulsive)
+- **Horizontal bright bands** → monochromatic noise (e.g., 50/60 Hz power line)
+- **Energy that sweeps from high to low frequency over time** → dispersive surface wave (Love or Rayleigh)
+- **Low-frequency stripe throughout** → ocean microseisms (0.1–0.3 Hz)
+""")
+
+    # ── 5. Seismic Waves ──────────────────────────────────────────────────────
+    with st.expander("🌊 5 — Seismic Wave Physics"):
+        st.markdown("#### Types of seismic waves")
+        st.markdown("""
+Seismic waves are mechanical waves that propagate through the Earth by elastic deformation.
+They are classified into **body waves** (travel through the interior) and **surface waves** 
+(travel along the Earth's surface).
+""")
+        st.latex(r"V_P = \sqrt{\frac{K + \frac{4}{3}G}{\rho}} \qquad V_S = \sqrt{\frac{G}{\rho}}")
+        st.markdown("""
+| Wave type | Polarisation | Speed | Typical freq. (local EQ) | Notes |
+|---|---|---|---|---|
+| **P (Primary)** | Compressional ‖ | Fastest | 6–12 Hz | Arrives first; feels like a thud |
+| **S (Secondary)** | Shear ⊥ | 57–60% of Vp | 2–6 Hz | Arrives after P; main shaking |
+| **Rayleigh** | Elliptical (retrograde) | ~92% of Vs | 0.3–1 Hz | Long duration; rolling motion |
+| **Love** | Horizontal transverse | ~ Vs | 0.3–1 Hz | Horizontal shaking; surface only |
+
+#### Wadati method for epicentral distance
+The S–P time difference is independent of origin time and depends only on distance:
+""")
+        st.latex(r"t_S - t_P = R \left(\frac{1}{V_S} - \frac{1}{V_P}\right) = R \cdot \frac{V_P - V_S}{V_P V_S}")
+        st.latex(r"\Rightarrow \quad d \approx (t_S - t_P) \cdot \frac{V_P \cdot V_S}{V_P - V_S}")
+        st.markdown("""
+For the IASP91 model (upper crust: Vp = 5.80, Vs = 3.36 km/s):
+Δt of **1 second** ≈ **8 km** epicentral distance.
+""")
+
+    # ── 6. Magnitude Scales ───────────────────────────────────────────────────
+    with st.expander("📏 6 — Earthquake Magnitude Scales"):
+        st.markdown("""
+#### Richter Local Magnitude (M_L)
+Defined by Charles Richter (1935) for Southern California. Uses the peak amplitude on a Wood-Anderson
+seismograph, corrected for distance with an empirical attenuation curve:
+""")
+        st.latex(r"M_L = \log_{10}(A) - \log_{10}(A_0(\Delta))")
+        st.markdown("""
+Where A is peak amplitude (μm) and A₀(Δ) is the empirical correction for epicentral distance Δ.
+
+**SeismicLens** scales synthetic amplitudes as:
+""")
+        st.latex(r"A_{peak} \propto 10^{0.8 M - 2.5}")
+        st.markdown("""
+This approximates the Gutenberg-Richter amplitude-magnitude relation.
+
+#### Moment Magnitude (M_w)
+The modern standard (Hanks & Kanamori, 1979), calibrated to be numerically close to M_L:
+""")
+        st.latex(r"M_w = \frac{2}{3} \log_{10}(M_0) - 10.7")
+        st.latex(r"M_0 = \mu \cdot A_{fault} \cdot \bar{D} \quad [\text{N·m}]")
+        st.markdown("""
+Where:
+- **M₀** = seismic moment (Nm) — total energy released at the fault
+- **μ** = rigidity / shear modulus of the surrounding rock (~3×10¹⁰ Pa)
+- **A_fault** = rupture area (m²)
+- **D̄** = average slip on the fault (m)
+
+M_w has **no saturation** at large magnitudes (unlike M_L) and is thus the preferred scale for large events.
+
+| M_w | Energy (joules) | Equivalent |
+|---|---|---|
+| 2.0 | 10¹¹ J | Small quarry blast |
+| 5.0 | 10¹⁴ J | Hiroshima bomb |
+| 7.0 | 10¹⁶ J | Large destructive quake |
+| 9.0 | 10¹⁸ J | 2011 Tōhoku earthquake |
+""")
+
+    # ── 7. Numerical Methods ──────────────────────────────────────────────────
+    with st.expander("🖥️ 7 — Numerical Methods & Implementation"):
+        st.markdown("""
+#### Signal tapering (Tukey window)
+Before FFT, the signal is tapered at both ends (5% cosine taper) to force it to smoothly reach zero.
+This prevents **spectral leakage** caused by the abrupt truncation of the signal.
+""")
+        st.latex(r"w_{Tukey}[n] = \begin{cases} \frac{1}{2}\left[1 - \cos\!\left(\frac{2\pi n}{\alpha N}\right)\right] & 0 \le n < \frac{\alpha N}{2} \\ 1 & \frac{\alpha N}{2} \le n < N\left(1-\frac{\alpha}{2}\right) \\ \frac{1}{2}\left[1 - \cos\!\left(\frac{2\pi(N-n)}{\alpha N}\right)\right] & N\left(1-\frac{\alpha}{2}\right) \le n \le N \end{cases}")
+        st.markdown("""
+Where α = 0.10 (10% total taper — 5% each end).
+
+#### Spectral centroid and bandwidth
+The spectral centroid (first moment) and bandwidth (second central moment) are computed on
+the one-sided amplitude spectrum A[k]:
+""")
+        st.latex(r"f_c = \frac{\sum_k f_k \cdot A[k]}{\sum_k A[k]}")
+        st.latex(r"\sigma_f = \sqrt{\frac{\sum_k (f_k - f_c)^2 \cdot A[k]}{\sum_k A[k]}}")
+        st.markdown("""
+These are the frequency-domain analogues of the mean and standard deviation of a probability distribution.
+
+#### Welch PSD normalisation
+The Welch PSD is normalised so that Parseval's theorem holds in the frequency domain:
+""")
+        st.latex(r"\int_{-\infty}^{\infty} S(f)\, df = \text{var}(x) = \frac{1}{N}\sum_{n} x^2[n]")
+        st.markdown("""
+This means the integral of the PSD equals the signal variance — a useful sanity check.
+""")
+
+    # ── References ────────────────────────────────────────────────────────────
+    st.markdown("""
+<div class='sl-card' style='margin-top:20px;'>
+<div class='theory-title'>📚 Key References</div>
+<div class='theory-body' style='font-size:12px; line-height:1.8;'>
+• Allen, R.V. (1978). Automatic earthquake recognition and timing from single traces. <em>BSSA</em>, 68(5).<br>
+• Butterworth, S. (1930). On the theory of filter amplifiers. <em>Wireless Engineer</em>, 7, 536–541.<br>
+• Cooley, J.W. & Tukey, J.W. (1965). An algorithm for the machine calculation of complex Fourier series. <em>Math. Computation</em>, 19, 297–301.<br>
+• Hanks, T.C. & Kanamori, H. (1979). A moment magnitude scale. <em>JGR</em>, 84(B5), 2348–2350.<br>
+• Kennett, B.L.N. & Engdahl, E.R. (1991). Traveltimes for global earthquake location (IASP91). <em>GJI</em>, 105, 429–465.<br>
+• Richter, C.F. (1935). An instrumental earthquake magnitude scale. <em>BSSA</em>, 25(1), 1–32.<br>
+• Wadati, K. (1933). On the travel time of earthquake waves. <em>Geophys. Mag.</em>, 7, 101–111.<br>
+• Welch, P.D. (1967). The use of Fast Fourier Transform for the estimation of power spectra. <em>IEEE TAES</em>, 15, 70–73.
+</div>
+</div>""", unsafe_allow_html=True)
 
 
 # ── Export ────────────────────────────────────────────────────────────────────
 with tab_export:
     st.markdown(f"<div class='section-title'>{T('tab_export', lang)}</div>", unsafe_allow_html=True)
+    st.markdown(f"<div class='tab-intro'>{T('export_desc', lang)}</div>", unsafe_allow_html=True)
 
     ce1, ce2, ce3 = st.columns(3)
 
@@ -1193,4 +1762,82 @@ with tab_export:
     df_prev = pd.DataFrame({"time_s": t[:200], "amplitude": signal_proc[:200]})
     st.dataframe(df_prev.style.format({"time_s": "{:.4f}", "amplitude": "{:.2f}"}),
                  height=260, use_container_width=True)
+
+    st.markdown("<div class='grad-div'></div>", unsafe_allow_html=True)
+
+    _next_steps = {
+        "en": "📌 What to do with the exported data",
+        "it": "📌 Cosa fare con i dati esportati",
+        "fr": "📌 Que faire avec les données exportées",
+        "es": "📌 Qué hacer con los datos exportados",
+        "de": "📌 Was mit den exportierten Daten tun",
+    }
+    st.markdown(f"<div class='section-title'>{_next_steps[lang]}</div>", unsafe_allow_html=True)
+
+    with st.expander("🐍 Python code snippets"):
+        st.code("""
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+# ── Load the signal CSV ─────────────────────────────────────────────────────
+df = pd.read_csv('seismiclens_signal.csv')
+t, amp = df['time_s'].values, df['amplitude_counts'].values
+
+plt.figure(figsize=(12, 3))
+plt.plot(t, amp, lw=0.8, color='steelblue')
+plt.xlabel('Time (s)'); plt.ylabel('Amplitude (counts)')
+plt.title('SeismicLens — Filtered Waveform')
+plt.tight_layout(); plt.show()
+
+# ── Load the FFT CSV ────────────────────────────────────────────────────────
+fft = pd.read_csv('seismiclens_fft.csv')
+plt.figure(figsize=(10, 3))
+plt.semilogy(fft['frequency_hz'], fft['amplitude'])
+plt.xlabel('Frequency (Hz)'); plt.ylabel('Amplitude')
+plt.title('Amplitude Spectrum')
+plt.tight_layout(); plt.show()
+
+# ── Load the PSD CSV ────────────────────────────────────────────────────────
+psd = pd.read_csv('seismiclens_psd.csv')
+plt.figure(figsize=(10, 3))
+plt.plot(psd['frequency_hz'], psd['psd_db'])
+plt.xlabel('Frequency (Hz)'); plt.ylabel('PSD (dB)')
+plt.title('Welch Power Spectral Density')
+plt.tight_layout(); plt.show()
+
+# ── Dominant frequency from FFT ─────────────────────────────────────────────
+dominant_f = fft.loc[fft['amplitude'].idxmax(), 'frequency_hz']
+print(f'Dominant frequency: {dominant_f:.3f} Hz')
+""", language="python")
+
+        st.code("""
+# ── Load & plot STA/LTA ─────────────────────────────────────────────────────
+import pandas as pd
+import matplotlib.pyplot as plt
+
+sl = pd.read_csv('seismiclens_stalta.csv')
+plt.figure(figsize=(12, 2))
+plt.plot(sl['time_s'], sl['stalta_ratio'], color='purple', lw=0.9)
+plt.axhline(y=3.5, ls='--', color='red', label='threshold=3.5')
+plt.xlabel('Time (s)'); plt.ylabel('STA/LTA')
+plt.legend(); plt.tight_layout(); plt.show()
+
+# First trigger time
+threshold = 3.5
+trigger_mask = sl['stalta_ratio'] > threshold
+if trigger_mask.any():
+    p_arrival = sl.loc[trigger_mask.idxmax(), 'time_s']
+    print(f'P-wave arrival: {p_arrival:.2f} s')
+""", language="python")
+
+    # ── Footer ────────────────────────────────────────────────────────────────
+    st.markdown("""
+<div style='text-align:center; padding: 32px 0 16px 0;'>
+  <div style='font-family: JetBrains Mono, monospace; font-size:11px; color:rgba(255,255,255,0.2);
+              border-top:1px solid rgba(255,255,255,0.06); padding-top:16px;'>
+    SeismicLens v2.1 &nbsp;·&nbsp; ObsPy · SciPy · NumPy · Plotly · Streamlit
+    &nbsp;·&nbsp; © 2024–2026
+  </div>
+</div>""", unsafe_allow_html=True)
 
