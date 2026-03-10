@@ -1,6 +1,6 @@
 # SeismicLens — Documentation française
 
-[Italiano](README_IT.md) · [English](README_EN.md) · **Français** · [Español](README_ES.md) · [Deutsch](README_DE.md) · [Index](../README.md)
+[Italiano](README_IT.md) · [English](/Users/daniaciampalini/IdeaProjects/seismiclens/README.md) · **Français** · [Español](README_ES.md) · [Deutsch](README_DE.md) 
 
 ---
 
