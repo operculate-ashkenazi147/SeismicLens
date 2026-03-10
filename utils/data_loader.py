@@ -1,6 +1,7 @@
 """
 Data loading utilities for SeismicLens.
-Supports MiniSEED (via ObsPy), CSV, and synthetic earthquake generation.
+Supports MiniSEED (via ObsPy), CSV, and synthetic earthquake generation
+with a physically realistic layered-crust velocity model.
 """
 
 import numpy as np
@@ -38,13 +39,13 @@ def load_mseed(file_obj) -> Tuple[np.ndarray, float, dict]:
     fs = float(tr.stats.sampling_rate)
 
     metadata = {
-        "network":   tr.stats.network,
-        "station":   tr.stats.station,
-        "location":  tr.stats.location,
-        "channel":   tr.stats.channel,
-        "starttime": str(tr.stats.starttime),
-        "endtime":   str(tr.stats.endtime),
-        "npts":      int(tr.stats.npts),
+        "network":          tr.stats.network,
+        "station":          tr.stats.station,
+        "location":         tr.stats.location,
+        "channel":          tr.stats.channel,
+        "starttime":        str(tr.stats.starttime),
+        "endtime":          str(tr.stats.endtime),
+        "npts":             int(tr.stats.npts),
         "sampling_rate_hz": fs,
     }
 
@@ -58,8 +59,8 @@ def load_csv_signal(file_obj) -> Tuple[np.ndarray, float, dict]:
     Load a seismic signal from a CSV file.
 
     Expected formats (auto-detected):
-      - Single column: amplitude values only (fs assumed 100 Hz)
-      - Two columns:   time(s), amplitude  → fs inferred from time column
+      - Single column : amplitude values only (fs assumed 100 Hz)
+      - Two columns   : time(s), amplitude  → fs inferred from time column
       - Column names are flexible (time/t/seconds + amplitude/amp/counts/data)
 
     Returns
@@ -78,34 +79,71 @@ def load_csv_signal(file_obj) -> Tuple[np.ndarray, float, dict]:
         signal = df.iloc[:, 0].to_numpy(dtype=np.float64)
         fs = 100.0
     elif time_cols and amp_cols:
-        t_arr = df[time_cols[0]].to_numpy(dtype=np.float64)
+        t_arr  = df[time_cols[0]].to_numpy(dtype=np.float64)
         signal = df[amp_cols[0]].to_numpy(dtype=np.float64)
         dt_median = np.median(np.diff(t_arr))
         fs = 1.0 / dt_median if dt_median > 0 else 100.0
     else:
-        # Fall back: assume col 0 = time, col 1 = amplitude
-        t_arr = df.iloc[:, 0].to_numpy(dtype=np.float64)
+        t_arr  = df.iloc[:, 0].to_numpy(dtype=np.float64)
         signal = df.iloc[:, 1].to_numpy(dtype=np.float64)
         dt_median = np.median(np.diff(t_arr))
         fs = 1.0 / dt_median if dt_median > 0 else 100.0
 
-    # Remove NaNs
     signal = np.nan_to_num(signal)
 
     metadata = {
-        "source":      "CSV upload",
-        "n_samples":   len(signal),
+        "source":           "CSV upload",
+        "n_samples":        len(signal),
         "sampling_rate_hz": round(fs, 4),
-        "duration_s":  round(len(signal) / fs, 2),
+        "duration_s":       round(len(signal) / fs, 2),
     }
     return signal, fs, metadata
+
+
+# ── Crustal velocity model ────────────────────────────────────────────────────
+
+# IASP91-inspired layered crustal model
+# Each layer: (depth_km_top, depth_km_bottom, Vp_km_s, Vs_km_s, rho_g_cm3)
+CRUSTAL_LAYERS = [
+    (0,   15,  5.80, 3.36, 2.72),   # Upper crust
+    (15,  25,  6.50, 3.75, 2.92),   # Middle crust
+    (25,  35,  7.00, 4.00, 3.05),   # Lower crust
+    (35, 200,  8.04, 4.47, 3.32),   # Upper mantle
+]
+
+
+def crustal_velocity_at_depth(depth_km: float) -> Tuple[float, float]:
+    """Return (Vp, Vs) in km/s for the given focal depth using the layered model."""
+    for (z0, z1, vp, vs, _) in CRUSTAL_LAYERS:
+        if z0 <= depth_km < z1:
+            return vp, vs
+    # Default: upper-mantle values
+    return 8.04, 4.47
+
+
+def travel_time_layered(dist_km: float, depth_km: float) -> Tuple[float, float]:
+    """
+    Approximate P and S travel times using a straight-ray through the
+    layered crust (good approximation for local earthquakes, dist < 200 km).
+    Uses hypocentral distance R = sqrt(dist² + depth²).
+
+    Returns
+    -------
+    t_p, t_s : travel times in seconds
+    """
+    R = np.sqrt(dist_km ** 2 + depth_km ** 2)  # hypocentral distance
+    vp, vs = crustal_velocity_at_depth(depth_km)
+    t_p = R / vp
+    t_s = R / vs
+    return t_p, t_s
 
 
 # ── Synthetic earthquake ─────────────────────────────────────────────────────
 
 def generate_synthetic_quake(
-        magnitude: float = 5.5,
-        depth_km:  float = 30.0,
+        magnitude:   float = 5.5,
+        depth_km:    float = 30.0,
+        dist_km:     float = None,
         noise_level: float = 0.15,
         duration_s:  float = 120.0,
         fs:          float = 100.0,
@@ -113,69 +151,84 @@ def generate_synthetic_quake(
     """
     Generate a physically-inspired synthetic earthquake waveform.
 
-    Model
-    -----
-    - Pre-event noise
-    - P-wave onset: high-frequency, low-amplitude pulse
-    - S-wave onset: lower-frequency, higher-amplitude phase
-    - Surface waves: long-period coda
-    - Superimposed broadband noise
+    Seismological model
+    -------------------
+    Velocity model : layered IASP91-like crust
+        Layer           Vp (km/s)   Vs (km/s)
+        Upper crust     5.80        3.36
+        Middle crust    6.50        3.75
+        Lower crust     7.00        4.00
+        Upper mantle    8.04        4.47
 
-    The arrival times are estimated from a simple velocity model:
-        Vp ≈ 6 km/s,  Vs ≈ 3.5 km/s (crustal average)
+    Wave phases
+    -----------
+    - P-wave  : primary compressional wave (highest freq, arrives first)
+    - S-wave  : secondary shear wave (lower freq, ~√3 × larger amplitude)
+    - Surface : Rayleigh / Love wave coda (very low freq, long duration)
+
+    Amplitude scaling follows the Richter magnitude relation:
+        A ∝ 10^(0.8 M - 2.5)
+
+    Noise model
+    -----------
+    Broadband bandpass noise (0.5–30 Hz) simulates microseismic background.
     """
     rng = np.random.default_rng(seed=42)
     n = int(duration_s * fs)
     t = np.linspace(0, duration_s, n)
 
-    # Epicentral distance: rough proxy from depth (teleseismic simplification)
-    dist_km = depth_km * 2.0 + magnitude * 15.0
-    vp, vs = 6.0, 3.5
-    t_p = dist_km / vp          # P-wave arrival (s)
-    t_s = dist_km / vs          # S-wave arrival (s)
-    t_surface = t_s + dist_km * 0.02  # rough surface wave delay
+    # Epicentral distance
+    if dist_km is None:
+        dist_km = depth_km * 2.0 + magnitude * 15.0
+
+    t_p, t_s = travel_time_layered(dist_km, depth_km)
+    t_surface = t_s + dist_km * 0.025   # approximate Love/Rayleigh delay
+
+    vp, vs = crustal_velocity_at_depth(depth_km)
 
     # Clamp arrivals within duration
-    t_p = min(t_p, duration_s * 0.25)
-    t_s = min(t_s, duration_s * 0.50)
+    t_p       = min(t_p,       duration_s * 0.25)
+    t_s       = min(t_s,       duration_s * 0.50)
     t_surface = min(t_surface, duration_s * 0.70)
 
-    # Amplitude scaling with magnitude (log scale)
+    # Amplitude scaling (Richter-style)
     amp_scale = 10 ** (0.8 * magnitude - 2.5)
     amp_scale = np.clip(amp_scale, 50, 5e5)
 
     signal = np.zeros(n)
 
-    # ── P-wave (high freq, short) ────────────────────────────────────────────
-    p_freq = 8.0 + magnitude * 0.5
-    p_width = max(0.5, 3.0 - magnitude * 0.2)
-    p_env = np.exp(-((t - t_p) ** 2) / (2 * p_width ** 2))
+    # ── P-wave ────────────────────────────────────────────────────────────────
+    # High-frequency (6–12 Hz), short duration, ~15% of total amplitude
+    p_freq  = 6.0 + magnitude * 0.7
+    p_width = max(0.4, 2.5 - magnitude * 0.15)
+    p_env   = np.exp(-((t - t_p) ** 2) / (2 * p_width ** 2))
     signal += amp_scale * 0.15 * p_env * np.sin(2 * np.pi * p_freq * (t - t_p))
 
-    # ── S-wave (lower freq, higher amp) ─────────────────────────────────────
-    s_freq = 3.0 + magnitude * 0.2
-    s_width = max(1.0, 5.0 - magnitude * 0.1)
-    s_env = np.exp(-((t - t_s) ** 2) / (2 * s_width ** 2))
+    # ── S-wave ────────────────────────────────────────────────────────────────
+    # Lower frequency (2–6 Hz), wider envelope, ~65% of total amplitude
+    # Vs ≈ Vp/√3 for Poisson solid → Vs ≈ 0.577 Vp
+    s_freq  = 2.5 + magnitude * 0.25
+    s_width = max(0.8, 4.5 - magnitude * 0.1)
+    s_env   = np.exp(-((t - t_s) ** 2) / (2 * s_width ** 2))
     signal += amp_scale * 0.65 * s_env * np.sin(2 * np.pi * s_freq * (t - t_s))
 
-    # ── Surface waves (very low freq, long coda) ─────────────────────────────
-    if t_surface < duration_s * 0.9:
-        surf_freq = 0.5 + magnitude * 0.05
-        surf_decay = 0.05 + 0.01 * magnitude
-        surf_env = np.where(t >= t_surface,
-                            np.exp(-surf_decay * (t - t_surface)), 0.0)
-        signal += amp_scale * 0.4 * surf_env * np.sin(
+    # ── Surface waves ─────────────────────────────────────────────────────────
+    # Very low frequency (0.3–1 Hz), slowly decaying coda, ~40% amplitude
+    if t_surface < duration_s * 0.90:
+        surf_freq  = 0.3 + magnitude * 0.06
+        surf_decay = 0.04 + 0.008 * magnitude
+        surf_env   = np.where(t >= t_surface,
+                              np.exp(-surf_decay * (t - t_surface)), 0.0)
+        signal += amp_scale * 0.40 * surf_env * np.sin(
             2 * np.pi * surf_freq * (t - t_surface)
         )
 
-    # ── Broadband noise ──────────────────────────────────────────────────────
-    noise = rng.normal(0, 1, n)
-    # Colour the noise (1/f tendency) via simple lowpass
+    # ── Broadband noise (0.5–30 Hz Butterworth) ───────────────────────────────
     from scipy.signal import butter, sosfiltfilt
-    sos = butter(2, [0.5 / (fs / 2), 30.0 / (fs / 2)], btype="band", output="sos")
+    noise = rng.normal(0, 1, n)
+    sos   = butter(2, [0.5 / (fs / 2), 30.0 / (fs / 2)], btype="band", output="sos")
     noise = sosfiltfilt(sos, noise)
     noise /= np.std(noise) + 1e-12
-
     signal += noise_level * amp_scale * 0.05 * noise
 
     metadata = {
@@ -183,8 +236,11 @@ def generate_synthetic_quake(
         "magnitude":       magnitude,
         "depth_km":        depth_km,
         "dist_km":         round(dist_km, 1),
+        "velocity_model":  f"Vp={vp} km/s  Vs={vs} km/s  (layer at depth)",
+        "vp_vs_ratio":     round(vp / vs, 3),
         "p_arrival_s":     round(t_p, 2),
         "s_arrival_s":     round(t_s, 2),
+        "sp_delay_s":      round(t_s - t_p, 2),
         "surface_wave_s":  round(t_surface, 2),
         "fs_hz":           fs,
         "duration_s":      duration_s,
@@ -192,3 +248,4 @@ def generate_synthetic_quake(
     }
 
     return signal.astype(np.float64), fs, metadata
+
