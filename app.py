@@ -59,16 +59,16 @@ STRINGS = {
     "noise":            {"en": "Noise level", "it": "Livello di rumore", "fr": "Niveau de bruit", "es": "Nivel de ruido", "de": "Rauschpegel"},
     "duration":         {"en": "Duration (s)", "it": "Durata (s)", "fr": "Durée (s)", "es": "Duración (s)", "de": "Dauer (s)"},
     "filter_section":   {"en": "Butterworth Filter", "it": "Filtro Butterworth", "fr": "Filtre Butterworth", "es": "Filtro Butterworth", "de": "Butterworth-Filter"},
-    "filter_toggle":    {"en": "Zero-phase bandpass", "it": "Bandpass zero-phase", "fr": "Passe-bande zéro-phase", "es": "Pasa-banda fase cero", "de": "Nullphasen-Bandpass"},
+    "filter_toggle":    {"en": "Zero-phase bandpass", "it": "Passa-banda a fase zero", "fr": "Passe-bande zéro-phase", "es": "Pasa-banda fase cero", "de": "Nullphasen-Bandpass"},
     "f_low":            {"en": "Low cut (Hz)", "it": "Taglio basso (Hz)", "fr": "Coupure basse (Hz)", "es": "Corte bajo (Hz)", "de": "Untere Grenzfrequenz (Hz)"},
     "f_high":           {"en": "High cut (Hz)", "it": "Taglio alto (Hz)", "fr": "Coupure haute (Hz)", "es": "Corte alto (Hz)", "de": "Obere Grenzfrequenz (Hz)"},
     "filter_order":     {"en": "Order", "it": "Ordine", "fr": "Ordre", "es": "Orden", "de": "Ordnung"},
-    "stalta_section":   {"en": "STA/LTA Detector", "it": "Rivelatore STA/LTA", "fr": "Détecteur STA/LTA", "es": "Detector STA/LTA", "de": "STA/LTA-Detektor"},
+    "stalta_section":   {"en": "STA/LTA Detector", "it": "Rilevatore STA/LTA", "fr": "Détecteur STA/LTA", "es": "Detector STA/LTA", "de": "STA/LTA-Detektor"},
     "sta_window":       {"en": "STA window (s)", "it": "Finestra STA (s)", "fr": "Fenêtre STA (s)", "es": "Ventana STA (s)", "de": "STA-Fenster (s)"},
     "lta_window":       {"en": "LTA window (s)", "it": "Finestra LTA (s)", "fr": "Fenêtre LTA (s)", "es": "Ventana LTA (s)", "de": "LTA-Fenster (s)"},
     "threshold":        {"en": "Trigger threshold", "it": "Soglia di trigger", "fr": "Seuil de déclenchement", "es": "Umbral de disparo", "de": "Auslöseschwelle"},
     "display_section":  {"en": "Display Options", "it": "Opzioni di visualizzazione", "fr": "Options d'affichage", "es": "Opciones de visualización", "de": "Anzeigeoptionen"},
-    "show_raw":         {"en": "Raw signal overlay", "it": "Overlay segnale grezzo", "fr": "Superposition signal brut", "es": "Superposición señal bruta", "de": "Rohsignal einblenden"},
+    "show_raw":         {"en": "Raw signal overlay", "it": "Sovrapposizione segnale grezzo", "fr": "Superposition signal brut", "es": "Superposición señal bruta", "de": "Rohsignal einblenden"},
     "show_phase":       {"en": "Phase spectrum", "it": "Spettro di fase", "fr": "Spectre de phase", "es": "Espectro de fase", "de": "Phasenspektrum"},
     "show_psd":         {"en": "Power Spectral Density", "it": "Densità spettrale di potenza", "fr": "Densité spectrale de puissance", "es": "Densidad espectral de potencia", "de": "Leistungsspektraldichte"},
     "show_spec":        {"en": "Spectrogram", "it": "Spettrogramma", "fr": "Spectrogramme", "es": "Espectrograma", "de": "Spektrogramm"},
@@ -124,7 +124,7 @@ STRINGS = {
     },
     "filter_details_title": {
         "en": "Zero-phase Butterworth filter — details",
-        "it": "Filtro Butterworth zero-phase — dettagli",
+        "it": "Filtro Butterworth a fase zero — dettagli",
         "fr": "Filtre Butterworth zéro-phase — détails",
         "es": "Filtro Butterworth fase cero — detalles",
         "de": "Nullphasen-Butterworth-Filter — Details",
@@ -211,7 +211,7 @@ STRINGS = {
     # ── Section descriptions ─────────────────────────────────────────────────
     "wave_desc": {
         "en": "The waveform plot shows amplitude (ground motion in counts) vs time. P-waves arrive first (compressional), S-waves second (shear). The Butterworth bandpass filter removes noise outside your chosen frequency band without distorting arrival times.",
-        "it": "Il grafico mostra l'ampiezza (moto del suolo in counts) nel tempo. Le onde P arrivano per prime (compressive), le onde S per seconde (di taglio). Il filtro Butterworth bandpass elimina il rumore fuori dalla banda di frequenza scelta senza distorcere i tempi di arrivo.",
+        "it": "Il grafico mostra l'ampiezza (moto del suolo in counts) nel tempo. Le onde P arrivano per prime (compressive), le onde S per seconde (di taglio). Il filtro Butterworth passa-banda elimina il rumore fuori dalla banda di frequenza scelta senza distorcere i tempi di arrivo.",
         "fr": "Le graphique montre l'amplitude (mouvement du sol en counts) en fonction du temps. Les ondes P arrivent en premier (compression), les ondes S en second (cisaillement). Le filtre Butterworth passe-bande supprime le bruit hors de la bande de fréquence sans distordre les temps d'arrivée.",
         "es": "El gráfico muestra la amplitud (movimiento del suelo en counts) vs tiempo. Las ondas P llegan primero (compresión), las ondas S después (cizallamiento). El filtro Butterworth pasa-banda elimina el ruido fuera de la banda de frecuencia sin distorsionar los tiempos de llegada.",
         "de": "Das Wellenformdiagramm zeigt die Amplitude (Bodenbewegung in Counts) über die Zeit. P-Wellen kommen zuerst an (Kompression), S-Wellen danach (Scherung). Der Butterworth-Bandpassfilter entfernt Rauschen außerhalb des Frequenzbandes ohne Ankunftszeiten zu verzerren.",
@@ -225,7 +225,7 @@ STRINGS = {
     },
     "spec_desc": {
         "en": "The spectrogram shows how the frequency content changes over time. It is computed via Short-Time Fourier Transform (STFT): the signal is split into short, overlapping windows, the FFT is computed for each, and the results are assembled into a 2D heatmap. Brighter colours = more energy.",
-        "it": "Lo spettrogramma mostra come il contenuto in frequenza cambia nel tempo. È calcolato tramite STFT: il segnale è diviso in finestre brevi e sovrapposte, la FFT è calcolata per ciascuna, e i risultati formano una mappa di calore 2D. Colori più chiari = più energia.",
+        "it": "Lo spettrogramma mostra come il contenuto in frequenza cambia nel tempo. È calcolato tramite STFT: il segnale è diviso in finestre brevi e sovrapposte, la FFT è calcolata per ciascuna, e i risultati formano una mappa di calore 2D. Colori più accesi = più energia.",
         "fr": "Le spectrogramme montre l'évolution du contenu fréquentiel dans le temps. Calculé via STFT : le signal est découpé en fenêtres courtes chevauchantes, la FFT est calculée pour chacune, et les résultats forment une carte de chaleur 2D. Couleurs plus claires = plus d'énergie.",
         "es": "El espectrograma muestra cómo varía el contenido frecuencial en el tiempo. Se calcula mediante STFT: el signal se divide en ventanas cortas solapadas, se calcula la FFT de cada una, y los resultados forman un mapa de calor 2D. Colores más claros = más energía.",
         "de": "Das Spektrogramm zeigt, wie sich der Frequenzinhalt über die Zeit verändert. Es wird per STFT berechnet: Das Signal wird in kurze, überlappende Fenster unterteilt, für jedes wird die FFT berechnet, und die Ergebnisse bilden eine 2D-Heatmap. Hellere Farben = mehr Energie.",
@@ -239,7 +239,7 @@ STRINGS = {
     },
     "model_desc": {
         "en": "This table shows an IASP91-inspired layered crustal velocity model used for synthetic waveform generation. Each layer is defined by its P-wave velocity (Vp), S-wave velocity (Vs), and density (ρ). These properties depend on mineralogy and pressure.",
-        "it": "Questa tabella mostra un modello di velocità crostale a strati ispirato a IASP91, usato per generare i segnali sintetici. Ogni strato è definito dalla velocità dell'onda P (Vp), onda S (Vs) e densità (ρ). Queste proprietà dipendono dalla mineralogia e dalla pressione.",
+        "it": "Questa tabella mostra un modello di velocità di crosta a strati ispirato a IASP91, usato per generare i segnali sintetici. Ogni strato è definito dalla velocità dell'onda P (Vp), onda S (Vs) e densità (ρ). Queste proprietà dipendono dalla mineralogia e dalla pressione.",
         "fr": "Ce tableau montre un modèle de vitesse crustale en couches inspiré d'IASP91, utilisé pour générer les formes d'onde synthétiques. Chaque couche est définie par la vitesse des ondes P (Vp), S (Vs) et la densité (ρ). Ces propriétés dépendent de la minéralogie et de la pression.",
         "es": "Esta tabla muestra un modelo de velocidad cortical en capas inspirado en IASP91, usado para generar las formas de onda sintéticas. Cada capa se define por la velocidad de onda P (Vp), onda S (Vs) y densidad (ρ). Estas propiedades dependen de la mineralogía y la presión.",
         "de": "Diese Tabelle zeigt ein IASP91-inspiriertes geschichtetes Krustengeschwindigkeitsmodell für die Synthese von Wellenformen. Jede Schicht ist durch P-Wellengeschwindigkeit (Vp), S-Wellengeschwindigkeit (Vs) und Dichte (ρ) definiert. Diese Eigenschaften hängen von der Mineralogie und dem Druck ab.",
@@ -253,7 +253,7 @@ STRINGS = {
     },
     "filter_why_body": {
         "en": "Real seismograms contain instrument noise, microseismic noise (ocean waves, 0.1–0.3 Hz), cultural noise (traffic, 1–20 Hz), and electronic noise. A bandpass filter keeps only the frequency band relevant to the earthquake you are studying, improving SNR and making phase picks more accurate.",
-        "it": "I sismogrammi reali contengono rumore strumentale, rumore microsiemico (onde oceaniche, 0.1–0.3 Hz), rumore culturale (traffico, 1–20 Hz) e rumore elettronico. Un filtro bandpass mantiene solo la banda di frequenza rilevante per il terremoto studiato, migliorando il SNR e rendendo più precisi i pick delle fasi.",
+        "it": "I sismogrammi reali contengono rumore strumentale, rumore microsismico (onde oceaniche, 0.1–0.3 Hz), rumore culturale (traffico, 1–20 Hz) e rumore elettronico. Un filtro passa-banda mantiene solo la banda di frequenza rilevante per il terremoto studiato, migliorando il SNR e rendendo più precisi i pick delle fasi.",
         "fr": "Les sismogrammes réels contiennent du bruit instrumental, du bruit microsismique (vagues océaniques, 0.1–0.3 Hz), du bruit culturel (trafic, 1–20 Hz) et du bruit électronique. Un filtre passe-bande conserve uniquement la bande de fréquence pertinente pour le séisme étudié, améliorant le SNR et la précision des détections de phases.",
         "es": "Los sismogramas reales contienen ruido instrumental, ruido microsísmico (olas oceánicas, 0.1–0.3 Hz), ruido cultural (tráfico, 1–20 Hz) y ruido electrónico. Un filtro pasa-banda conserva solo la banda de frecuencia relevante para el sismo estudiado, mejorando el SNR y la precisión de los picks de fases.",
         "de": "Echte Seismogramme enthalten Instrumentenrauschen, mikroseismisches Rauschen (Meereswellen, 0,1–0,3 Hz), kulturelles Rauschen (Verkehr, 1–20 Hz) und elektronisches Rauschen. Ein Bandpassfilter behält nur den für das untersuchte Erdbeben relevanten Frequenzbereich, verbessert das SNR und macht Phasenbestimmungen genauer.",
@@ -273,7 +273,7 @@ STRINGS = {
     "stalta_samples":   {"en": "samples", "it": "campioni", "fr": "echantillons", "es": "muestras", "de": "Abtastwerte"},
     "theory_header_1":  {"en": "1 — Discrete Fourier Transform (DFT)", "it": "1 — Trasformata di Fourier discreta (DFT)", "fr": "1 — Transformee de Fourier discrete (DFT)", "es": "1 — Transformada de Fourier discreta (DFT)", "de": "1 — Diskrete Fourier-Transformation (DFT)"},
     "theory_header_2":  {"en": "2 — Butterworth Filter Design", "it": "2 — Progettazione del filtro Butterworth", "fr": "2 — Conception du filtre Butterworth", "es": "2 — Diseno del filtro Butterworth", "de": "2 — Butterworth-Filterentwurf"},
-    "theory_header_3":  {"en": "3 — Power Spectral Density (PSD)", "it": "3 — Densita spettrale di potenza (PSD)", "fr": "3 — Densite spectrale de puissance (DSP)", "es": "3 — Densidad espectral de potencia (PSD)", "de": "3 — Leistungsspektraldichte (PSD)"},
+    "theory_header_3":  {"en": "3 — Power Spectral Density (PSD)", "it": "3 — Densità spettrale di potenza (PSD)", "fr": "3 — Densite spectrale de puissance (DSP)", "es": "3 — Densidad espectral de potencia (PSD)", "de": "3 — Leistungsspektraldichte (PSD)"},
     "theory_header_4":  {"en": "4 — Short-Time Fourier Transform (STFT)", "it": "4 — Trasformata di Fourier a tempo breve (STFT)", "fr": "4 — Transformee de Fourier a court terme (STFT)", "es": "4 — Transformada de Fourier de tiempo reducido (STFT)", "de": "4 — Kurzzeit-Fourier-Transformation (STFT)"},
     "theory_header_5":  {"en": "5 — Seismic Wave Physics", "it": "5 — Fisica delle onde sismiche", "fr": "5 — Physique des ondes sismiques", "es": "5 — Fisica de las ondas sismicas", "de": "5 — Seismische Wellenphysik"},
     "theory_header_6":  {"en": "6 — Earthquake Magnitude Scales", "it": "6 — Scale di magnitudo dei terremoti", "fr": "6 — Echelles de magnitude des seismes", "es": "6 — Escalas de magnitud de terremotos", "de": "6 — Erdbeben-Magnitudenskalen"},
@@ -293,7 +293,7 @@ STRINGS = {
     "theory_read_spec_4": {"en": "Low-frequency stripe throughout -> ocean microseisms (0.1-0.3 Hz)", "it": "Striscia a bassa frequenza costante -> microsismicità oceanica (0.1-0.3 Hz)", "fr": "Bande basse frequence constante -> microseismes oceaniques (0.1-0.3 Hz)", "es": "Franja de baja frecuencia constante -> microsismos oceanicos (0.1-0.3 Hz)", "de": "Konstanter niederfrequenter Streifen -> ozeanische Mikroseismik (0,1-0,3 Hz)"},
     "syn_desc": {
         "en": "Generate a physically realistic synthetic seismogram using an IASP91-like crustal model. The simulator models P-waves (6-12 Hz), S-waves (2-6 Hz) and surface waves (0.3-1 Hz) with amplitudes scaled by magnitude and distances from travel-time equations.",
-        "it": "Genera un sismogramma sintetico fisicamente realistico usando un modello crostale simile a IASP91. Il simulatore modella le onde P (6-12 Hz), le onde S (2-6 Hz) e le onde superficiali (0.3-1 Hz) con ampiezze scalate per la magnitudo e distanze calcolate dalle equazioni dei tempi di percorrenza.",
+        "it": "Genera un sismogramma sintetico fisicamente realistico usando un modello di crosta simile a IASP91. Il simulatore modella le onde P (6-12 Hz), le onde S (2-6 Hz) e le onde superficiali (0.3-1 Hz) con ampiezze scalate per la magnitudo e distanze calcolate dalle equazioni dei tempi di percorrenza.",
         "fr": "Genere un sismogramme synthetique physiquement realiste en utilisant un modele crustal de type IASP91. Le simulateur modelise les ondes P (6-12 Hz), S (2-6 Hz) et de surface (0.3-1 Hz) avec des amplitudes mises a l'echelle par la magnitude.",
         "es": "Genera un sismograma sintetico fisicamente realista usando un modelo cortical tipo IASP91. El simulador modela ondas P (6-12 Hz), ondas S (2-6 Hz) y ondas superficiales (0.3-1 Hz) con amplitudes escaladas por la magnitud.",
         "de": "Erzeugt ein physikalisch realistisches synthetisches Seismogramm unter Verwendung eines IASP91-ahnlichen Krustenmodells. Der Simulator modelliert P-Wellen (6-12 Hz), S-Wellen (2-6 Hz) und Oberflachenwellen (0.3-1 Hz).",
@@ -1983,9 +1983,9 @@ with tab_model:
     _elastic_exp_title = {
         "en": "Elastic wave equations — full derivation",
         "it": "Equazioni delle onde elastiche — derivazione completa",
-        "fr": "Equations des ondes elastiques — derivation complete",
-        "es": "Ecuaciones de ondas elasticas — derivacion completa",
-        "de": "Elastische Wellengleichungen — vollstandige Herleitung",
+        "fr": "Équations des ondes élastiques — dérivation complète",
+        "es": "Ecuaciones de ondas elásticas — derivación completa",
+        "de": "Elastische Wellengleichungen — vollständige Herleitung",
     }
     _elastic_body = {
         "en": """
@@ -2084,18 +2084,18 @@ with tab_theory:
     st.markdown(f"<div class='section-title'>{T('tab_theory', lang)}</div>", unsafe_allow_html=True)
     _theory_intro = {
         "en": "This tab is your <strong>mathematical reference</strong> for every algorithm used in SeismicLens. Each section explains the concept from first principles, gives the key equations, and links to how the algorithm is used in the other tabs.",
-        "it": "Questa sezione e' il tuo <strong>riferimento matematico</strong> per ogni algoritmo usato in SeismicLens. Ogni sezione spiega il concetto dai principi fondamentali, fornisce le equazioni chiave e indica come l'algoritmo viene usato nelle altre schede.",
-        "fr": "Cet onglet est votre <strong>reference mathematique</strong> pour chaque algorithme utilise dans SeismicLens. Chaque section explique le concept depuis les premiers principes, donne les equations cles et indique comment l'algorithme est utilise dans les autres onglets.",
-        "es": "Esta pestana es tu <strong>referencia matematica</strong> para cada algoritmo usado en SeismicLens. Cada seccion explica el concepto desde los primeros principios, proporciona las ecuaciones clave e indica como se usa el algoritmo en las otras pestanas.",
-        "de": "Dieser Tab ist Ihre <strong>mathematische Referenz</strong> fur jeden in SeismicLens verwendeten Algorithmus. Jeder Abschnitt erklart das Konzept von den Grundprinzipien, gibt die Schlusselgleichungen an und zeigt, wie der Algorithmus in den anderen Tabs verwendet wird.",
+        "it": "Questa sezione è il tuo <strong>riferimento matematico</strong> per ogni algoritmo usato in SeismicLens. Ogni sezione spiega il concetto dai principi fondamentali, fornisce le equazioni chiave e indica come l'algoritmo viene usato nelle altre schede.",
+        "fr": "Cet onglet est votre <strong>référence mathématique</strong> pour chaque algorithme utilisé dans SeismicLens. Chaque section explique le concept depuis les premiers principes, donne les équations clés et indique comment l'algorithme est utilisé dans les autres onglets.",
+        "es": "Esta pestaña es tu <strong>referencia matemática</strong> para cada algoritmo usado en SeismicLens. Cada sección explica el concepto desde los primeros principios, proporciona las ecuaciones clave e indica cómo se usa el algoritmo en las otras pestañas.",
+        "de": "Dieser Tab ist Ihre <strong>mathematische Referenz</strong> für jeden in SeismicLens verwendeten Algorithmus. Jeder Abschnitt erklärt das Konzept von den Grundprinzipien, gibt die Schlüsselgleichungen an und zeigt, wie der Algorithmus in den anderen Tabs verwendet wird.",
     }
     st.markdown(f"<div class='tab-intro'>{_theory_intro[lang]}</div>", unsafe_allow_html=True)
 
     _exp1_title = {
         "en": "1 — Discrete Fourier Transform (DFT) and Fast FFT",
         "it": "1 — Trasformata di Fourier Discreta (DFT) e FFT veloce",
-        "fr": "1 — Transformee de Fourier Discrete (DFT) et FFT rapide",
-        "es": "1 — Transformada de Fourier Discreta (DFT) y FFT rapida",
+        "fr": "1 — Transformée de Fourier Discrète (DFT) et FFT rapide",
+        "es": "1 — Transformada de Fourier Discreta (DFT) y FFT rápida",
         "de": "1 — Diskrete Fourier-Transformation (DFT) und schnelle FFT",
     }
     _exp1_body = {
@@ -2130,88 +2130,88 @@ number of cycles within the window.
 """,
         "it": """
 #### Cosa fa realmente la FFT?
-Un segnale nel dominio del tempo **x[n]** e' una lista di N valori di ampiezza campionati alla frequenza fs.
+Un segnale nel dominio del tempo **x[n]** è una lista di N valori di ampiezza campionati alla frequenza fs.
 La DFT lo converte in N **coefficienti di frequenza a valori complessi** X[k].
-Ogni coefficiente indica *quanta sinusoide pura alla frequenza f_k = k·fs/N e' presente*.
+Ogni coefficiente indica *quanta sinusoide pura alla frequenza f_k = k·fs/N è presente*.
 
-L'esponenziale complesso (dalla **formula di Eulero**) e' il mattone fondamentale:
+L'esponenziale complesso (dalla **formula di Eulero**) è il mattone fondamentale:
 
-Quindi ogni funzione base DFT e' un **coseno** (parte reale) + **seno** (parte immaginaria) alla frequenza f_k.
+Quindi ogni funzione base DFT è un **coseno** (parte reale) + **seno** (parte immaginaria) alla frequenza f_k.
 La DFT proietta il segnale su ogni funzione base (prodotto interno), misurando:
-- `Re(X[k])` — quanto del coseno alla frequenza f_k e' nel segnale
-- `Im(X[k])` — quanto del seno alla frequenza f_k e' nel segnale
-- `|X[k]|` = sqrt(Re^2 + Im^2) — **ampiezza** totale alla frequenza f_k
+- `Re(X[k])` — quanto coseno alla frequenza f_k è presente nel segnale
+- `Im(X[k])` — quanto seno alla frequenza f_k è presente nel segnale
+- `|X[k]|` = sqrt(Re² + Im²) — **ampiezza** totale alla frequenza f_k
 - angolo X[k] = atan2(Im, Re) — **fase** alla frequenza f_k
 
-#### Perche' la FFT e' piu' veloce?
-La DFT ingenua richiede **O(N^2)** moltiplicazioni. La FFT di Cooley-Tukey (1965) sfrutta la periodicita'
-di e^(-j2pi*k*n/N) per suddividere ricorsivamente la somma, riducendo il costo a **O(N log N)**.
-Per N = 100.000 questo e' circa 10.000x piu' veloce.
+#### Perché la FFT è più veloce?
+La DFT ingenua richiede **O(N²)** moltiplicazioni. La FFT di Cooley-Tukey (1965) sfrutta la periodicità
+di e^(-j2π·k·n/N) per suddividere ricorsivamente la somma, riducendo il costo a **O(N log N)**.
+Per N = 100.000 questo è circa 10.000× più veloce.
 
 #### Spettro monolaterale per segnali reali
 I segnali reali hanno **simmetria Hermitiana**: X[N-k] = conj(X[k]). Quindi solo N/2+1 bin sono unici.
-`scipy.fft.rfft` sfrutta questo e restituisce solo la meta' a frequenza positiva.
-Normalizzazione per recuperare l'ampiezza reale: A[k] = (2/N)|X[k]|, k = 1...N/2-1
+`scipy.fft.rfft` sfrutta questo e restituisce solo la metà a frequenza positiva.
+Normalizzazione per recuperare l'ampiezza reale: A[k] = (2/N)|X[k]|, k = 1…N/2-1
 
-La **finestra di Hann** viene applicata prima della FFT per ridurre la **perdita spettrale** — la diffusione dell'energia
-da un bin di frequenza forte ai bin vicini che si verifica quando il segnale non e' un numero intero
+La **finestra di Hann** viene applicata prima della FFT per ridurre la **perdita spettrale** — la dispersione
+dell'energia da un bin forte ai bin vicini, che si verifica quando il segnale non contiene un numero intero
 di cicli all'interno della finestra.
 """,
         "fr": """
-#### Que fait reellement la FFT?
-Un signal dans le domaine temporel **x[n]** est une liste de N valeurs d'amplitude echantillonnees a la frequence fs.
-La DFT le convertit en N **coefficients de frequence a valeurs complexes** X[k].
-Chaque coefficient indique *quelle quantite d'une sinusoide pure a la frequence f_k = k·fs/N est presente*.
+#### Que fait réellement la FFT ?
+Un signal dans le domaine temporel **x[n]** est une liste de N valeurs d'amplitude échantillonnées à la fréquence fs.
+La DFT le convertit en N **coefficients de fréquence à valeurs complexes** X[k].
+Chaque coefficient indique *quelle quantité d'une sinusoïde pure à la fréquence f_k = k·fs/N est présente*.
 
-L'exponentielle complexe (de la **formule d'Euler**) est le composant cle:
+L'exponentielle complexe (de la **formule d'Euler**) est le composant clé :
 
-Ainsi chaque fonction de base DFT est un **cosinus** (partie reelle) + **sinus** (partie imaginaire) a la frequence f_k.
-La DFT projette le signal sur chaque fonction de base, mesurant:
-- `Re(X[k])` — quelle part du cosinus a f_k est dans le signal
-- `Im(X[k])` — quelle part du sinus a f_k est dans le signal
-- `|X[k]|` = sqrt(Re^2 + Im^2) — **amplitude** totale a f_k
-- angle X[k] = atan2(Im, Re) — **phase** a f_k
+Ainsi chaque fonction de base DFT est un **cosinus** (partie réelle) + **sinus** (partie imaginaire) à la fréquence f_k.
+La DFT projette le signal sur chaque fonction de base, mesurant :
+- `Re(X[k])` — quelle part du cosinus à f_k est dans le signal
+- `Im(X[k])` — quelle part du sinus à f_k est dans le signal
+- `|X[k]|` = sqrt(Re² + Im²) — **amplitude** totale à f_k
+- angle X[k] = atan2(Im, Re) — **phase** à f_k
 
-#### Pourquoi la FFT est-elle plus rapide?
-La DFT naive necessite **O(N^2)** multiplications. La FFT de Cooley-Tukey (1965) exploite la periodicite
-de e^(-j2pi*k*n/N) pour diviser recursiment la somme, reduisant le cout a **O(N log N)**.
-Pour N = 100 000, c'est environ 10 000x plus rapide.
+#### Pourquoi la FFT est-elle plus rapide ?
+La DFT naïve nécessite **O(N²)** multiplications. La FFT de Cooley-Tukey (1965) exploite la périodicité
+de e^(-j2π·k·n/N) pour diviser récursivement la somme, réduisant le coût à **O(N log N)**.
+Pour N = 100 000, c'est environ 10 000× plus rapide.
 
-La **fenetre de Hann** est appliquee avant la FFT pour reduire la **fuite spectrale**.
+La **fenêtre de Hann** est appliquée avant la FFT pour réduire la **fuite spectrale**.
 """,
         "es": """
-#### Que hace realmente la FFT?
-Una senal en el dominio del tiempo **x[n]** es una lista de N valores de amplitud muestreados a la tasa fs.
+#### ¿Qué hace realmente la FFT?
+Una señal en el dominio del tiempo **x[n]** es una lista de N valores de amplitud muestreados a la tasa fs.
 La DFT la convierte en N **coeficientes de frecuencia de valores complejos** X[k].
-Cada coeficiente indica *cuanta sinusoide pura a la frecuencia f_k = k·fs/N esta presente*.
+Cada coeficiente indica *cuánta sinusoide pura a la frecuencia f_k = k·fs/N está presente*.
 
-- `Re(X[k])` — cuanto del coseno en f_k esta en la senal
-- `Im(X[k])` — cuanto del seno en f_k esta en la senal
-- `|X[k]|` = sqrt(Re^2 + Im^2) — **amplitud** total en f_k
-- angulo X[k] = atan2(Im, Re) — **fase** en f_k
+- `Re(X[k])` — cuánto del coseno en f_k está en la señal
+- `Im(X[k])` — cuánto del seno en f_k está en la señal
+- `|X[k]|` = sqrt(Re² + Im²) — **amplitud** total en f_k
+- ángulo X[k] = atan2(Im, Re) — **fase** en f_k
 
-#### Por que la FFT es mas rapida?
-La DFT ingenua requiere **O(N^2)** multiplicaciones. La FFT de Cooley-Tukey (1965) reduce el costo a **O(N log N)**.
-Para N = 100,000 esto es ~10,000x mas rapido.
+#### ¿Por qué la FFT es más rápida?
+La DFT ingenua requiere **O(N²)** multiplicaciones. La FFT de Cooley-Tukey (1965) reduce el coste a **O(N log N)**.
+Para N = 100.000 esto es ~10.000× más rápido.
 
 La **ventana de Hann** se aplica antes de la FFT para reducir la **fuga espectral**.
 """,
         "de": """
-#### Was macht die FFT tatsachlich?
+#### Was macht die FFT tatsächlich?
 Ein zeitbereichiges Signal **x[n]** ist eine Liste von N Amplitudenwerten, die mit der Rate fs abgetastet wurden.
 Die DFT konvertiert es in N **komplexwertige Frequenzkoeffizienten** X[k].
 Jeder Koeffizient gibt an, *wie viel einer reinen Sinuswelle bei der Frequenz f_k = k·fs/N vorhanden ist*.
 
 - `Re(X[k])` — wie viel des Kosinus bei f_k im Signal enthalten ist
 - `Im(X[k])` — wie viel des Sinus bei f_k im Signal enthalten ist
-- `|X[k]|` = sqrt(Re^2 + Im^2) — **Amplitude** bei f_k
+- `|X[k]|` = sqrt(Re² + Im²) — **Amplitude** bei f_k
 - Winkel X[k] = atan2(Im, Re) — **Phase** bei f_k
 
 #### Warum ist die FFT schneller?
-Die naive DFT benotigt **O(N^2)** Multiplikationen. Die Cooley-Tukey-FFT (1965) reduziert den Aufwand auf **O(N log N)**.
-Fur N = 100.000 ist das etwa 10.000x schneller.
+Die naive DFT benötigt **O(N²)** Multiplikationen. Die Cooley-Tukey-FFT (1965) reduziert den Aufwand auf **O(N log N)**.
+Für N = 100.000 ist das etwa 10.000× schneller.
 
-Das **Hann-Fenster** wird vor der FFT angewendet, um **Spektralausblutung** zu reduzieren.
+Das **Hann-Fenster** wird vor der FFT angewendet, um **Spektralleckage** zu reduzieren.
 """,
     }
 
@@ -2233,10 +2233,10 @@ Das **Hann-Fenster** wird vor der FFT angewendet, um **Spektralausblutung** zu r
     }
     _exp2b_intro = {
         "en": "The Butterworth filter is **maximally flat in the passband** — no ripple. A bandpass is formed by cascading a high-pass and a low-pass. SOS (Second-Order Sections) ensures numerical stability for high orders. `sosfiltfilt` runs the filter forward then backward: zero phase distortion, arrival times preserved exactly.",
-        "it": "Il filtro Butterworth e' **massimamente piatto nella banda passante** — nessuna ondulazione. Un filtro passa-banda e' ottenuto cascando un passa-alto e un passa-basso. Le SOS (Sezioni del Secondo Ordine) garantiscono la stabilita' numerica per ordini elevati. `sosfiltfilt` applica il filtro in avanti poi all'indietro: distorsione di fase zero, tempi di arrivo preservati esattamente.",
-        "fr": "Le filtre Butterworth est **maximalement plat dans la bande passante** — pas d'ondulation. Un passe-bande est forme en cascadant un passe-haut et un passe-bas. Les SOS garantissent la stabilite numerique. `sosfiltfilt` applique le filtre en avant puis en arriere : distorsion de phase nulle.",
-        "es": "El filtro Butterworth es **maximalmente plano en la banda de paso** — sin ondulaciones. Un pasa-banda se forma cascadeando un pasa-alto y un pasa-bajo. Las SOS garantizan la estabilidad numerica. `sosfiltfilt` aplica el filtro hacia adelante y atras: distorsion de fase cero.",
-        "de": "Das Butterworth-Filter ist **maximal flach im Durchlassbereich** — keine Welligkeit. Ein Bandpass wird durch Kaskadierung eines Hochpass- und Tiefpassfilters gebildet. SOS sichert numerische Stabilitat. `sosfiltfilt` lauft vorwarts und ruckwarts: keine Phasenverzerrung.",
+        "it": "Il filtro Butterworth è **massimamente piatto nella banda passante** — nessuna ondulazione. Un filtro passa-banda si ottiene cascadando un passa-alto e un passa-basso. Le SOS (Sezioni del Secondo Ordine) garantiscono la stabilità numerica per ordini elevati. `sosfiltfilt` applica il filtro in avanti poi all'indietro: distorsione di fase zero, tempi di arrivo preservati esattamente.",
+        "fr": "Le filtre Butterworth est **maximalement plat dans la bande passante** — pas d'ondulation. Un passe-bande est formé en cascadant un passe-haut et un passe-bas. Les SOS garantissent la stabilité numérique. `sosfiltfilt` applique le filtre en aller puis en retour : distorsion de phase nulle.",
+        "es": "El filtro Butterworth es **maximalmente plano en la banda de paso** — sin ondulaciones. Un pasa-banda se forma cascadeando un pasa-alto y un pasa-bajo. Las SOS garantizan la estabilidad numérica. `sosfiltfilt` aplica el filtro hacia adelante y atrás: distorsión de fase cero.",
+        "de": "Das Butterworth-Filter ist **maximal flach im Durchlassbereich** — keine Welligkeit. Ein Bandpass wird durch Kaskadierung eines Hochpass- und Tiefpassfilters gebildet. SOS sichert numerische Stabilität. `sosfiltfilt` läuft vorwärts und rückwärts: keine Phasenverzerrung.",
     }
     _exp2b_current = {
         "en": f"Current filter: order {filter_order}, effective order **{2*filter_order}** (zero-phase), roll-off = **{40*filter_order} dB/decade**.",
@@ -2256,9 +2256,9 @@ Das **Hann-Fenster** wird vor der FFT angewendet, um **Spektralausblutung** zu r
     # ── 3. STA/LTA ────────────────────────────────────────────────────────────
     _exp3_title = {
         "en": "3 — STA/LTA Seismic Phase Detector",
-        "it": "3 — Detector di fasi sismiche STA/LTA",
-        "fr": "3 — Detecteur de phases sismiques STA/LTA",
-        "es": "3 — Detector de fases sismicas STA/LTA",
+        "it": "3 — Rilevatore di fasi sismiche STA/LTA",
+        "fr": "3 — Détecteur de phases sismiques STA/LTA",
+        "es": "3 — Detector de fases sísmicas STA/LTA",
         "de": "3 — STA/LTA seismischer Phasendetektor",
     }
     _exp3_body = {
@@ -2369,8 +2369,8 @@ Referenz: Allen, R.V. (1978). BSSA, 68(5).
     _exp4_title = {
         "en": "4 — Spectrogram and Time-Frequency Analysis",
         "it": "4 — Spettrogramma e analisi tempo-frequenza",
-        "fr": "4 — Spectrogramme et analyse temps-frequence",
-        "es": "4 — Espectrograma y analisis tiempo-frecuencia",
+        "fr": "4 — Spectrogramme et analyse temps-fréquence",
+        "es": "4 — Espectrograma y análisis tiempo-frecuencia",
         "de": "4 — Spektrogramm und Zeit-Frequenz-Analyse",
     }
     _exp4_body = {
@@ -2485,7 +2485,7 @@ In SeismicLens verwendet `scipy.signal.spectrogram` ein Hann-Fenster mit 75% Ube
         "en": "5 — Seismic Wave Physics",
         "it": "5 — Fisica delle onde sismiche",
         "fr": "5 — Physique des ondes sismiques",
-        "es": "5 — Fisica de las ondas sismicas",
+        "es": "5 — Física de las ondas sísmicas",
         "de": "5 — Physik der seismischen Wellen",
     }
     _exp5_body = {
@@ -2576,7 +2576,7 @@ Fur das IASP91-Modell: 1 Sekunde S-P-Verzogerung ~ 8 km Epizentraldistanz.
     _exp6_title = {
         "en": "6 — Earthquake Magnitude Scales",
         "it": "6 — Scale di magnitudo dei terremoti",
-        "fr": "6 — Echelles de magnitude des seismes",
+        "fr": "6 — Échelles de magnitude des séismes",
         "es": "6 — Escalas de magnitud de terremotos",
         "de": "6 — Erdbeben-Magnituden-Skalen",
     }
@@ -2606,8 +2606,8 @@ Fur das IASP91-Modell: 1 Sekunde S-P-Verzogerung ~ 8 km Epizentraldistanz.
     _exp7_title = {
         "en": "7 — Numerical Methods and Implementation",
         "it": "7 — Metodi numerici e implementazione",
-        "fr": "7 — Methodes numeriques et implementation",
-        "es": "7 — Metodos numericos e implementacion",
+        "fr": "7 — Méthodes numériques et implémentation",
+        "es": "7 — Métodos numéricos e implementación",
         "de": "7 — Numerische Methoden und Implementierung",
     }
     _exp7_body = {
@@ -2698,9 +2698,9 @@ Das Integral der PSD entspricht der Signalvarianz — eine nutzliche Plausibilit
     _ref_title = {
         "en": "Key References",
         "it": "Riferimenti principali",
-        "fr": "References principales",
+        "fr": "Références principales",
         "es": "Referencias principales",
-        "de": "Wesentliche Referenzen",
+        "de": "Wichtige Referenzen",
     }
     st.markdown(f"""
 <div class='sl-card' style='margin-top:20px;'>
